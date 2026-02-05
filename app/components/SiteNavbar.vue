@@ -108,7 +108,6 @@ const { y } = useWindowScroll()
 const lastScrollY = ref(0)
 const isVisible = ref(true)
 
-// Fecha menu mobile ao scrollar
 watch(y, (newY) => {
   if (Math.abs(newY - lastScrollY.value) > 10) {
     isMobileMenuOpen.value = false
@@ -124,19 +123,14 @@ watch(y, (newY) => {
   lastScrollY.value = newY
 })
 
-// Estados dos Menus
 const isLangMenuOpen = ref(false)
 const isMobileMenuOpen = ref(false)
 
 const langMenuRef = ref(null)
 const mobileMenuRef = ref(null)
 
-// Fechar ao clicar fora
 onClickOutside(langMenuRef, () => isLangMenuOpen.value = false)
 onClickOutside(mobileMenuRef, (event) => {
-  // Ignora o clique se for no botão de toggle (para não reabrir imediatamente)
-  // Mas como o botão de toggle está fora do ref, o comportamento padrão funciona bem 
-  // se controlarmos o toggle manualmente, mas aqui simplificamos fechando se clicar fora do card.
   isMobileMenuOpen.value = false
 })
 
@@ -165,7 +159,7 @@ const links = computed(() => [
 ])
 
 const scrollToSection = (href: string) => {
-  isMobileMenuOpen.value = false // Fecha menu mobile ao clicar
+  isMobileMenuOpen.value = false
   const element = document.querySelector(href)
   if (element) element.scrollIntoView({ behavior: 'smooth' })
 }
