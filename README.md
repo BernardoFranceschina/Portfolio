@@ -41,7 +41,7 @@ Se você quiser clonar e rodar este projeto na sua máquina:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/bernardofranceschina/portfolio.git](https://github.com/bernardofranceschina/portfolio.git)
+    git clone https://github.com/bernardofranceschina/portfolio.git
     cd portfolio
     ```
 
