@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "intro": "Início",
+    "cases": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "tagline": "Além da sintaxe",
+    "title": "Transformo complexidade em {highlight}.",
+    "title_highlight": "impacto",
+    "subtitle": "Unindo a profundidade da lógica com a clareza do design. Problemas reais resolvidos com elegância.",
+    "cta": "Conheça meu trabalho"
+  },
+  "intro": {
+    "marquee": "CREATE • READ • UPDATE • DELETE •",
+    "label": "// Curadoria",
+    "heading": "Projetos em {break} {highlight}",
+    "heading_highlight": "Destaque",
+    "system": "Status: Online",
+    "title": "A tecnologia é o meio. O fim é a {highlight}.",
+    "title_highlight": "experiência",
+    "subtitle": "Construindo projetos onde a complexidade do backend encontra a elegância do frontend. {break} Projetos reais, problemas reais, resolvidos com {highlight}.",
+    "subtitle_highlight": "propósito",
+    "scroll": "VEJA OS PROJETOS ABAIXO"
+  },
+  "projects": {
+    "section_title": "Projetos",
+    "section_subtitle": "Selecionados",
+    "view_case": "Ver projeto",
+    "modal": {
+      "challenge": "O Desafio",
+      "stack": "Stack Tecnológico",
+      "architecture": "Arquitetura do Sistema",
+      "view_diagram": "Ver Diagrama",
+      "result": "O Resultado",
+      "development": "Desenvolvimento",
+      "year": "Ano",
+      "company": "Empresa",
+      "status": "Status",
+      "online": "Online"
+    },
+    "items": {
+      "psico": {
+        "title": "Clínica de Psicologia",
+        "category": "SaaS / Full Stack",
+        "description": "Plataforma SaaS All-in-One para gestão de consultórios de psicologia, integrando agendamento, prontuário e controle financeiro.",
+        "challenge_text": "A gestão de um consultório solitário sofre com a fragmentação: agendamentos no WhatsApp, financeiro em planilhas e prontuários em papel. O desafio era criar uma experiência digital unificada que fosse simples o suficiente para não burocratizar o atendimento, mas robusta o bastante para automatizar o ciclo financeiro e oferecer autonomia ao paciente.",
+        "development_text": "A prioridade foi construir uma interface reativa e de fácil uso, deixando a psicóloga focando no principal: o atendimento ao paciente. No núcleo do sistema, desenhei uma arquitetura de segregação de contextos que isola rigorosamente o portal de autoatendimento do paciente do ambiente clínico, garantindo privacidade absoluta dos prontuários sem sacrificar a facilidade de uso.",
+        "result_text": "A plataforma profissionalizou a operação clínica. O Portal do Paciente reduziu drásticamente a troca de mensagens para agendamento, enquanto o módulo financeiro automatizou a emissão de recibos e o controle de fluxo de caixa, devolvendo tempo precioso para o foco principal: o atendimento ao paciente."
+      },
+      "iase": {
+        "title": "IASE2",
+        "category": "Automotive / P&D",
+        "description": "Sistema de telemetria avançada e gestão de experimentos para engenharia automotiva, em parceria com Renault e Horse.",
+        "challenge_text": "O desafio era criar um pipeline de dados Edge-to-Cloud robusto o suficiente para suportar a aquisição de dados críticos de veículos em movimento via 5G. Era necessário orquestrar a configuração remota de hardware embarcado e garantir a integridade dos arquivos gerados em alta frequência, tudo isso enquanto se gerenciava uma infraestrutura complexa com múltiplos serviços interdependentes.",
+        "development_text": "A solução exigiu uma orquestração precisa entre os serviços para garantir a integridade dos dados vindo da placa. Desenvolvi a lógica de controle que sincroniza a recepção de pacotes de alta frequência com a persistência em disco, evitando gargalos de I/O. No front-end, o desafio foi construir uma arquitetura de estado reativa, capaz de renderizar gráficos de alta densidade sem travamentos, permitindo ao usuário alternar fluidamente entre o monitoramento ao vivo de frotas e a análise de relatórios dos experimentos executados.",
+        "result_text": "Transformamos o veículo de teste em um laboratório conectado. A solução eliminou a barreira física dos testes de campo, permitindo que equipes configurem experimentos e analisem telemetria crítica em tempo real, reduzindo drasticamente o ciclo de feedback entre a pista de testes e o laboratório de P&D."
+      },
+      "odonto": {
+        "title": "Ecossistema de Franquias",
+        "category": "ERP / HealthTech",
+        "description": "Solução integral para gestão de redes de franquias odontológicas, unificando operação clínica, financeira e administrativa.",
+        "challenge_text": "O cenário era a fragmentação. Com múltiplas franquias operando isoladamente, a rede sofria com a falta de padronização e a dificuldade de extrair inteligência de dados consolidados. O desafio técnico foi arquitetar um sistema multi-inquilino capaz de gerenciar desde o micro-estoque de uma clínica até os macro-indicadores de desempenho da rede inteira, sem sacrificar a performance.",
+        "development_text": "Ao longo do ano de evolução contínua, construímos uma plataforma modular. O back-end atua como a espinha dorsal robusta que garante a integridade fiscal e contratual, enquanto o front-end entrega interfaces densas de informação — como o odontograma interativo e agendas dinâmicas — sem perder a fluidez. A complexidade de módulos díspares (Chat, Financeiro, IoT de Estoque) foi abstraída em uma experiência unificada para o usuário final.",
+        "result_text": "O sistema tornou-se o sistema nervoso central da rede. A centralização eliminou gargalos operacionais, permitindo que gestores tomassem decisões baseadas em dados em tempo real e que dentistas focassem no paciente, com todo o fluxo administrativo automatizado, do agendamento à emissão da nota fiscal."
+      },
+      "ndpz": {
+        "title": "Ecossistema de Educação",
+        "category": "CRM / EdTech",
+        "description": "Plataforma centralizada de gestão operacional, unificando CRM, fluxo de caixa e vendas de produtos híbridos (físicos e digitais).",
+        "challenge_text": "A expansão da empresa criou um caos operacional: gerenciar receitas híbridas (ingressos presenciais e vendas digitais) em plataformas isoladas gerava um ponto cego financeiro e impedia o CRM de ter uma visão única do cliente, além de ter um custo maior. O desafio técnico era substituir a colcha de retalhos de planilhas e gateways externos por um núcleo operacional robusto, onde a integridade do fluxo de caixa fosse a prioridade zero, independentemente do tipo de produto vendido.",
+        "development_text": "Desenvolvi uma arquitetura centrada no financeiro. Diferente de plataformas comuns, aqui cada venda (seja curso ou ingresso) nasce primeiro como uma transação financeira conciliada com o gateway de pagamento, garantindo integridade no fluxo de caixa. Sobre esse núcleo, acoplei módulos de entrega: um reprodutor de vídeo para o EAD, um validador de códigos para eventos presenciais e uma Landing Page headless dinâmica, onde o marketing altera conteúdo sem depender de deploy.",
+        "result_text": "A solução eliminou a necessidade de contratar 4 ferramentas SaaS distintas. Hoje, a plataforma gerencia o ciclo de vida completo do cliente: da captura na Landing Page, passando pela compra integrada ao Asaas, até o consumo do conteúdo ou check-in no evento, com todos os dados financeiros refletindo instantaneamente no painel administrativo."
+      }
+    }
+  },
+  "footer": {
+    "next_step": "// Próximo Passo",
+    "cta_heading": "Tem uma ideia? {break} {highlight}",
+    "cta_highlight": "Vamos construir.",
+    "send_email": "Mandar Email",
+    "role": "Desenvolvedor Full Stack.",
+    "status": "Disponível para novos projetos",
+    "connect": "Conectar",
+    "source_code": "Código fonte",
+    "contact": "Contato",
+    "main_email": "Email",
+    "copied": "Copiado!",
+    "rights": "Todos os direitos reservados.",
+    "location": "Local: Brasil",
+    "made_with": "Feito com"
+  },
+  "meta": {
+    "title": "Bernardo Franceschina | Desenvolvedor Full Stack",
+    "description": "Desenvolvedor Full Stack especializado em arquiteturas robustas e interfaces imersivas.",
+    "og_image_alt": "Portfolio de Bernardo Franceschina - Full Stack Developer"
+  }
+}

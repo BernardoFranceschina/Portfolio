@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "intro": "Home",
+    "cases": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Beyond syntax",
+    "title": "Turning complexity into {highlight}.",
+    "title_highlight": "impact",
+    "subtitle": "Merging the depth of logic with the clarity of design. Real problems solved with elegance.",
+    "cta": "See my work"
+  },
+  "intro": {
+    "marquee": "CREATE • READ • UPDATE • DELETE •",
+    "label": "// Curated",
+    "heading": "Projects in {break} {highlight}",
+    "heading_highlight": "Spotlight",
+    "system": "Status: Online",
+    "title": "Technology is the means. The end is the {highlight}.",
+    "title_highlight": "experience",
+    "subtitle": "Building projects where backend complexity meets frontend elegance. {break} Real projects, real problems, solved with {highlight}.",
+    "subtitle_highlight": "purpose",
+    "scroll": "VIEW PROJECTS BELOW"
+  },
+  "projects": {
+    "section_title": "Projects",
+    "section_subtitle": "Selected",
+    "view_case": "View project",
+    "modal": {
+      "challenge": "The Challenge",
+      "stack": "Tech Stack",
+      "architecture": "System Architecture",
+      "view_diagram": "View Diagram",
+      "result": "The Result",
+      "development": "Development",
+      "year": "Year",
+      "company": "Company",
+      "status": "Status",
+      "online": "Online"
+    },
+    "items": {
+      "psico": {
+        "title": "Psychology Clinic",
+        "category": "SaaS / Full Stack",
+        "description": "All-in-One SaaS platform for psychology practice management, integrating scheduling, medical records, and financial control.",
+        "challenge_text": "Managing a solo practice suffers from fragmentation: scheduling via WhatsApp, finances in spreadsheets, and paper records. The challenge was to create a unified digital experience simple enough not to burden the workflow, yet robust enough to automate the financial cycle and offer patient autonomy.",
+        "development_text": "The priority was building a reactive, user-friendly interface, allowing the psychologist to focus on what matters: patient care. At the system's core, I designed a context segregation architecture that rigorously isolates the patient self-service portal from the clinical environment, ensuring absolute record privacy without sacrificing usability.",
+        "result_text": "The platform professionalized the clinical operation. The Patient Portal drastically reduced messaging back-and-forth for scheduling, while the financial module automated receipt issuance and cash flow control, giving back precious time for the main focus: patient care."
+      },
+      "iase": {
+        "title": "IASE2",
+        "category": "Automotive / R&D",
+        "description": "Advanced telemetry and experiment management system for automotive engineering, in partnership with Renault and Horse.",
+        "challenge_text": "The challenge was creating an Edge-to-Cloud data pipeline robust enough to support critical data acquisition from moving vehicles via 5G. It was necessary to orchestrate remote embedded hardware configuration and ensure high-frequency file integrity, all while managing a complex infrastructure with multiple interdependent services.",
+        "development_text": "The solution required precise orchestration between services to ensure data integrity coming from the board. I developed control logic to synchronize high-frequency packet reception with disk persistence, avoiding I/O bottlenecks. On the frontend, the challenge was building a reactive state architecture capable of rendering high-density charts without freezing, allowing users to fluidly switch between live fleet monitoring and analyzing experiment reports.",
+        "result_text": "We transformed the test vehicle into a connected lab. The solution eliminated the physical barrier of field testing, allowing teams to configure experiments and analyze critical telemetry in real-time, drastically reducing the feedback loop between the test track and the R&D lab."
+      },
+      "odonto": {
+        "title": "Franchise Ecosystem",
+        "category": "ERP / HealthTech",
+        "description": "Comprehensive solution for dental franchise network management, unifying clinical, financial, and administrative operations.",
+        "challenge_text": "The scenario was fragmentation. With multiple franchises operating in silos, the network suffered from a lack of standardization and difficulty extracting intelligence from consolidated data. The technical challenge was architecting a multi-tenant system capable of managing everything from a clinic's micro-inventory to the entire network's macro-performance indicators, without sacrificing performance.",
+        "development_text": "Over a year of continuous evolution, we built a modular platform. The backend acts as a robust backbone ensuring fiscal and contractual integrity, while the frontend delivers information-dense interfaces—like interactive dental charts and dynamic schedules—without losing fluidity. The complexity of disparate modules (Chat, Finance, IoT Inventory) was abstracted into a unified end-user experience.",
+        "result_text": "The system became the network's central nervous system. Centralization eliminated operational bottlenecks, enabling managers to make real-time data-driven decisions and dentists to focus on patients, with the entire administrative flow automated, from scheduling to invoicing."
+      },
+      "ndpz": {
+        "title": "Education Ecosystem",
+        "category": "CRM / EdTech",
+        "description": "Centralized operational management platform, unifying CRM, cash flow, and hybrid product sales (physical and digital).",
+        "challenge_text": "Company expansion created operational chaos: managing hybrid revenue (in-person tickets and digital sales) on isolated platforms generated a financial blind spot and prevented the CRM from having a single customer view, in addition to higher costs. The technical challenge was replacing the patchwork of spreadsheets and external gateways with a robust operational core, where cash flow integrity was priority zero, regardless of the product type sold.",
+        "development_text": "I developed a finance-centric architecture. Unlike common platforms, here every sale (whether a course or a ticket) starts primarily as a financial transaction reconciled with the payment gateway, ensuring cash flow integrity. On top of this core, I coupled delivery modules: a video player for e-learning, a code validator for in-person events, and a dynamic headless Landing Page where marketing updates content without deployments.",
+        "result_text": "The solution eliminated the need for 4 distinct SaaS tools. Today, the platform manages the full customer lifecycle: from capture on the Landing Page, through purchase integrated with Asaas, to content consumption or event check-in, with all financial data instantly reflecting in the administrative dashboard."
+      }
+    }
+  },
+  "footer": {
+    "next_step": "// Next Step",
+    "cta_heading": "Have an idea? {break} {highlight}",
+    "cta_highlight": "Let's build it.",
+    "send_email": "Send Email",
+    "role": "Full Stack Developer.",
+    "status": "Available for new projects",
+    "connect": "Connect",
+    "source_code": "Source code",
+    "contact": "Contact",
+    "main_email": "Email",
+    "copied": "Copied!",
+    "rights": "All rights reserved.",
+    "location": "Location: Brazil",
+    "made_with": "Made with"
+  },
+  "meta": {
+    "title": "Bernardo Franceschina | Full Stack Developer",
+    "description": "Full Stack Developer specializing in robust architectures and immersive interfaces.",
+    "og_image_alt": "Bernardo Franceschina Portfolio - Full Stack Developer"
+  }
+}
