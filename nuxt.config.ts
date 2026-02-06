@@ -39,4 +39,14 @@ export default defineNuxtConfig({
       processCSSVariables: true,
     }
   },
+  routeRules: {
+    '/': { prerender: true },
+    '/en': { prerender: true },
+  },
+
+  nitro: {
+    prerender: {
+      failOnError: false, 
+    }
+  }
 })
