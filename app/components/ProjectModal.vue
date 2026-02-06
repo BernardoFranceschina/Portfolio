@@ -26,7 +26,7 @@
           </span>
         </button>
       </div>
-      <div id="modal-content" class="relative w-full md:w-[90vw] lg:w-[80vw] 2xl:max-w-7xl h-full bg-[#111] overflow-y-auto shadow-2xl border-l border-white/10 slide-in flex flex-col">
+      <div id="modal-content" tabindex="-1" class="relative w-full md:w-[90vw] lg:w-[80vw] 2xl:max-w-7xl h-full bg-[#111] overflow-y-auto shadow-2xl border-l border-white/10 slide-in flex flex-col">
         
         <div class="absolute top-6 left-6 flex gap-4 md:hidden z-50">
           <button 
