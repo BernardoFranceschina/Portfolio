@@ -45,7 +45,7 @@ const { t } = useI18n({
           </div>
 
           <div class="hidden md:block mt-12">
-            <div class="flex items-center gap-4 text-sm text-gray-500 font-mono">
+            <div class="flex items-center gap-4 text-sm text-gray-400 font-mono">
               <span class="block w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
               {{ t('intro.system') }}
             </div>

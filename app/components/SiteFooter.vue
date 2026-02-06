@@ -10,7 +10,7 @@
           </p>
           <h2 class="text-4xl md:text-6xl font-display font-light text-white leading-[1.1]">
             {{ t('footer.cta_heading') }}
-            <span class="block text-gray-500 italic font-serif mt-2">{{ t('footer.cta_highlight') }}</span>
+            <span class="block text-gray-400 italic font-serif mt-2">{{ t('footer.cta_highlight') }}</span>
           </h2>
         </div>
 
@@ -45,7 +45,7 @@
         </div>
 
         <div class="md:col-span-3 lg:col-span-4 md:pl-12">
-           <h4 class="text-xs font-mono text-gray-600 uppercase tracking-widest mb-6">
+           <h4 class="text-xs font-mono text-gray-400 uppercase tracking-widest mb-6">
             {{ t('footer.connect') }}
           </h4>
           <ul class="space-y-4">
@@ -74,7 +74,7 @@
         </div>
 
         <div class="md:col-span-4 lg:col-span-4">
-          <h4 class="text-xs font-mono text-gray-600 uppercase tracking-widest mb-6">
+          <h4 class="text-xs font-mono text-gray-400 uppercase tracking-widest mb-6">
             {{ t('footer.contact') }}
           </h4>
            
@@ -87,7 +87,7 @@
                <div class="flex items-center justify-between mb-2">
                  <span 
                    class="text-[10px] font-mono uppercase tracking-wider transition-colors duration-300"
-                   :class="copied ? 'text-green-400 font-bold' : 'text-gray-500 group-hover:text-gray-400'"
+                   :class="copied ? 'text-green-400 font-bold' : 'text-gray-400 group-hover:text-gray-400'"
                  >
                    {{ copied ? t('footer.copied') : t('footer.main_email') }}
                  </span>
@@ -95,7 +95,7 @@
                  <Icon 
                    :name="copied ? 'ph:check-bold' : 'ph:copy-simple'" 
                    class="w-5 h-5 transition-all duration-300" 
-                   :class="copied ? 'text-green-400 scale-110' : 'text-gray-600 group-hover:text-white'" 
+                   :class="copied ? 'text-green-400 scale-110' : 'text-gray-400 group-hover:text-white'" 
                  />
                </div>
                
@@ -112,12 +112,12 @@
 
       </div>
 
-      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-600 font-mono">
+      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-400 font-mono">
         <p>© {{ currentYear }} Bernardo Franceschina. {{ t('footer.rights') }}</p>
         
         <div class="flex items-center gap-6">
            <span class="flex items-center gap-2">
-             <Icon name="ph:map-pin" class="text-gray-700"/>
+             <Icon name="ph:map-pin" class="text-gray-400"/>
              {{ t('footer.location') }}
            </span>
            <span class="w-[1px] h-3 bg-white/10 hidden md:block"></span>
