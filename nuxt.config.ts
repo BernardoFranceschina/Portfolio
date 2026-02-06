@@ -38,11 +38,4 @@ export default defineNuxtConfig({
       processCSSVariables: true,
     }
   },
-  features: {
-    inlineStyles: true,
-  },
-  image: {
-    format: ['webp'],
-    quality: 80,
-  }
 })

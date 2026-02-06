@@ -7,14 +7,13 @@
         
         <div class="absolute inset-0 z-20 transform hover:scale-105 transition-transform duration-700 ease-out">
           <div class="w-full h-full bg-white rounded-[2rem] md:rounded-[3rem] rotate-[-3deg] overflow-hidden border-4 border-white/10 shadow-2xl relative">
-            <img 
+            <NuxtImg 
               src="/bernardo.png" 
               alt="Colagem com diversas linguagens de programações e frameworks, junto com a logo da universidade federal de santa catarina e ao centro a foto do Bernardo Franceschina" 
               class="object-cover w-full h-full  hover:grayscale-0 transition-all duration-500"
               fetchpriority="high"
-              width="500" 
-              height="500"
-              decoding="sync"
+              format="webp"
+              preload
             />
             <div class="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
            </div>

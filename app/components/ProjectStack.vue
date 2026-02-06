@@ -58,8 +58,7 @@
                 <NuxtImg 
                   :src="project.image"
                   :alt="`Capa do projeto ${t(`projects.items.${project.id}.title`)}`" 
-                  sizes="100vw sm:50vw md:33vw"
-                  quality="80"
+                  sizes="100vw sm:50vw md:800px"
                   format="webp"
                   loading="lazy"
                   densities="x1 x2"
