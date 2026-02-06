@@ -117,11 +117,11 @@
         
         <div class="flex items-center gap-6">
            <span class="flex items-center gap-2">
-             <Icon name="ph:map-pin" class="text-gray-400"/>
+             <Icon name="ph:map-pin" class="text-white"/>
              {{ t('footer.location') }}
            </span>
            <span class="w-[1px] h-3 bg-white/10 hidden md:block"></span>
-           <span class="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+           <span class="flex items-center gap-2 text-gray-400">
             {{ t('footer.made_with') }}
             <Icon name="logos:nuxt-icon" class="grayscale w-4 h-4 hover:grayscale-0 transition-all" /> & 
             <Icon name="logos:tailwindcss-icon" class="grayscale w-4 h-4 hover:grayscale-0 transition-all" />

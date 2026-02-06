@@ -9,12 +9,12 @@ const { t } = useI18n({
 <template>
   <section class="relative bg-[#0f0f11] text-white overflow-hidden py-16 md:py-32">
     
-    <div class="absolute top-0 left-0 w-full overflow-hidden opacity-[0.03] pointer-events-none select-none">
+    <div aria-hidden="true" class="absolute top-0 left-0 w-full overflow-hidden opacity-[0.03] pointer-events-none select-none">
       <div class="flex animate-marquee whitespace-nowrap">
         <span class="text-[6rem] md:text-[12rem] lg:text-[15rem] font-black font-sans uppercase leading-none pr-8">
           {{ t('intro.marquee') }}
         </span>
-        <span aria-hidden="true" class="text-[6rem] md:text-[12rem] lg:text-[15rem] font-black font-sans uppercase leading-none pr-8">
+        <span class="text-[6rem] md:text-[12rem] lg:text-[15rem] font-black font-sans uppercase leading-none pr-8">
           {{ t('intro.marquee') }}
         </span>
       </div>
@@ -78,7 +78,7 @@ const { t } = useI18n({
             </i18n-t>
           </p>
 
-          <div class="mt-8 md:mt-12 flex items-center gap-4 text-white/40 group cursor-default">
+          <div class="mt-8 md:mt-12 flex items-center gap-4 text-gray-400 group cursor-default">
             <div class="h-[1px] w-12 bg-white/20 group-hover:w-24 transition-all duration-500"></div>
             <span class="font-mono text-xs tracking-widest group-hover:text-white transition-colors uppercase">
               {{ t('intro.scroll') }}
