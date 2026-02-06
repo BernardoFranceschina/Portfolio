@@ -2,7 +2,49 @@
   <Transition name="modal">
     <div v-if="isOpen" class="fixed inset-0 z-[999] flex justify-end">
       <div class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity" @click="close"></div>
-      <div class="relative w-full md:w-[90vw] lg:w-[80vw] 2xl:max-w-7xl h-full bg-[#111] overflow-y-auto shadow-2xl border-l border-white/10 slide-in flex flex-col">
+      
+      <div class="fixed top-1/2 -translate-y-1/2 left-4 z-[1002] hidden xl:block" v-if="prevProject">
+        <button 
+          @click="$emit('navigate', prevProject)"
+          class="bg-black/50 hover:bg-yellow-500 hover:text-black text-white p-4 rounded-full backdrop-blur-md border border-white/10 transition-all duration-300 group"
+        >
+          <Icon name="ph:caret-left-bold" class="text-2xl" />
+          <span class="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-black px-3 py-1 rounded text-xs font-mono uppercase tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 text-white pointer-events-none">
+            {{ t(`projects.items.${prevProject.id}.title`) }}
+          </span>
+        </button>
+      </div>
+
+      <div class="fixed top-1/2 -translate-y-1/2 right-4 lg:right-[calc(80vw+1rem)] 2xl:right-[calc(1280px+1rem)] z-[1002] hidden xl:block" v-if="nextProject">
+        <button 
+          @click="$emit('navigate', nextProject)"
+          class="bg-black/50 hover:bg-yellow-500 hover:text-black text-white p-4 rounded-full backdrop-blur-md border border-white/10 transition-all duration-300 group"
+        >
+          <Icon name="ph:caret-right-bold" class="text-2xl" />
+          <span class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-black px-3 py-1 rounded text-xs font-mono uppercase tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 text-white pointer-events-none">
+            {{ t(`projects.items.${nextProject.id}.title`) }}
+          </span>
+        </button>
+      </div>
+      <div id="modal-content" class="relative w-full md:w-[90vw] lg:w-[80vw] 2xl:max-w-7xl h-full bg-[#111] overflow-y-auto shadow-2xl border-l border-white/10 slide-in flex flex-col">
+        
+        <div class="absolute top-6 left-6 flex gap-4 md:hidden z-50">
+          <button 
+            v-if="prevProject"
+            @click="$emit('navigate', prevProject)"
+            class="bg-black/20 hover:bg-white/10 text-white w-10 h-10 rounded-full flex items-center justify-center border border-white/10 transition-colors"
+          >
+            <Icon name="ph:caret-left-bold" />
+          </button>
+          <button 
+            v-if="nextProject"
+            @click="$emit('navigate', nextProject)"
+            class="bg-black/20 hover:bg-white/10 text-white w-10 h-10 rounded-full flex items-center justify-center border border-white/10 transition-colors"
+          >
+            <Icon name="ph:caret-right-bold" />
+          </button>
+        </div>
+
         <button 
           @click="close" 
           class="fixed top-6 right-6 md:top-8 md:right-8 z-50 bg-black/20 hover:bg-white border border-white/10 hover:text-black text-white backdrop-blur-md w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg group"
@@ -165,18 +207,25 @@
         <Icon name="ph:x-bold" class="text-xl" />
       </button>
 
+      <div v-if="isZoomLoading" class="absolute inset-0 flex items-center justify-center z-[-1]">
+        <div class="w-12 h-12 border-2 border-white/10 border-t-yellow-500 rounded-full animate-spin"></div>
+      </div>
+
       <img 
         :src="zoomedImage" 
-        class="max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-transform duration-300 scale-100 hover:scale-[1.02]" 
+        class="max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-all duration-500" 
+        :class="{ 'opacity-0 scale-95': isZoomLoading, 'opacity-100 scale-100': !isZoomLoading }"
         alt="Zoomed View"
-        @click.stop 
+        @click.stop
+        @load="onZoomImageLoad"
       />
     </div>
   </Transition>
 </template>
 
 <script setup lang="ts">
-import { ref, onUnmounted, watch } from 'vue' 
+import { ref, onUnmounted, watch } from 'vue'
+import { onKeyStroke } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n({
@@ -186,19 +235,39 @@ const { t } = useI18n({
 const props = defineProps<{
   isOpen: boolean
   project: any
+  nextProject?: any
+  prevProject?: any
 }>()
 
-const emit = defineEmits(['close'])
+const emit = defineEmits(['close', 'navigate'])
 
 const zoomedImage = ref<string | null>(null)
+const isZoomLoading = ref(false)
+
+onKeyStroke('Escape', (e) => {
+  if (props.isOpen) emit('close')
+})
 
 const openZoom = (src: string) => {
-  if (src) zoomedImage.value = src
+  if (src) {
+    zoomedImage.value = src
+    isZoomLoading.value = true
+  }
+}
+
+const onZoomImageLoad = () => {
+  isZoomLoading.value = false
 }
 
 const closeZoom = () => {
   zoomedImage.value = null
+  isZoomLoading.value = false
 }
+
+watch(() => props.project, () => {
+  const modalContent = document.getElementById('modal-content')
+  if (modalContent) modalContent.scrollTop = 0
+})
 
 watch(() => props.isOpen, (isOpen) => {
   if (isOpen) {

@@ -13,11 +13,14 @@
         <ProjectStack @open-project="openProject"/>
       </div>
 
-      <ProjectModal 
-        v-if="activeProject" 
-        :isOpen="isProjectOpen" 
+      <ProjectModal
+        v-if="activeProject"
+        :isOpen="isProjectOpen"
         :project="activeProject"
-        @close="isProjectOpen = false" 
+        :next-project="nextProject"
+        :prev-project="prevProject"
+        @close="isProjectOpen = false"
+        @navigate="openProject"
       />
     </main>
 
@@ -33,6 +36,7 @@ import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 const { t, locale } = useI18n()
 
+const { projects } = useProjects()
 const isProjectOpen = ref(false)
 const activeProject = ref(null)
 
@@ -45,6 +49,21 @@ const openProject = (project) => {
   activeProject.value = project
   isProjectOpen.value = true
 }
+
+const activeIndex = computed(() => {
+  if (!activeProject.value) return -1
+  return projects.findIndex(p => p.id === activeProject.value.id)
+})
+
+const nextProject = computed(() => {
+  if (activeIndex.value === -1 || activeIndex.value === projects.length - 1) return null
+  return projects[activeIndex.value + 1]
+})
+
+const prevProject = computed(() => {
+  if (activeIndex.value <= 0) return null
+  return projects[activeIndex.value - 1]
+})
 
 const siteUrl = 'https://franceschina.dev/'
 
