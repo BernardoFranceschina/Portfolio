@@ -8,7 +8,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxtjs/i18n',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/seo'
   ],
   site: {
     url: 'https://franceschina.dev',
@@ -27,5 +28,14 @@ export default defineNuxtConfig({
       { code: 'en', iso: 'en-US', file: 'en.json', name: 'EN' }
     ],
     detectBrowserLanguage: false
-  }
+  },
+  fonts: {
+    defaults: {
+      weights: [400, 700],
+      styles: ['normal', 'italic'],
+    },
+    experimental: {
+      processCSSVariables: true,
+    }
+  },
 })
