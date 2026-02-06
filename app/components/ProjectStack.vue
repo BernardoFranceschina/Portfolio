@@ -55,9 +55,13 @@
               </div>
 
               <div class="w-full lg:w-1/2 h-full absolute lg:relative inset-0 z-0 lg:z-auto">
-                 <NuxtImg 
-                   :src="project.image" 
-                   class="w-full h-full object-cover opacity-50 lg:opacity-100 group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0" 
+                <NuxtImg 
+                  :src="project.image"
+                  :alt="`Capa do projeto ${t(`projects.items.${project.id}.title`)}`" 
+                  sizes="100vw sm:50vw md:800px"
+                  format="webp"
+                  loading="lazy"
+                  class="w-full h-full object-cover opacity-50 lg:opacity-100 group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0" 
                  />
                  <div class="absolute inset-0 bg-[#0f0f11]/40 lg:hidden"></div>
               </div>

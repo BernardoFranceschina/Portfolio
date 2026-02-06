@@ -10,11 +10,12 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/sitemap'
   ],
-
+  site: {
+    url: 'https://franceschina.dev',
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' }
   },
-
   i18n: {
     baseUrl: 'https://franceschina.dev',
     vueI18n: './i18n.config.ts',

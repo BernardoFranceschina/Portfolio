@@ -11,7 +11,9 @@
               src="/bernardo.svg" 
               alt="Colagem com diversas linguagens de programações e frameworks, junto com a logo da universidade federal de santa catarina e ao centro a foto do Bernardo Franceschina" 
               class="object-cover w-full h-full  hover:grayscale-0 transition-all duration-500"
-              placeholder
+              fetchpriority="high"
+              format="webp"
+              preload
             />
             <div class="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
            </div>
