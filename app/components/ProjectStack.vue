@@ -8,7 +8,7 @@
           <span class="italic font-serif text-gray-500">{{ t('projects.section_subtitle') }}</span>
         </h2>
         <span class="hidden md:block font-mono text-xs text-gray-400">
-          (0{{ projects.length }})
+          (0{{ projects?.length || 0 }})
         </span>
       </div>
 
@@ -28,17 +28,17 @@
               <div class="w-full lg:w-1/2 p-8 md:p-12 flex flex-col justify-between z-20 bg-gradient-to-b lg:bg-gradient-to-r from-black/90 via-black/50 to-transparent">
                 <div class="flex justify-between items-start">
                   <span class="font-mono text-xs border border-white/20 px-3 py-1 rounded-full uppercase tracking-wider text-white/80">
-                    {{ t(`projects.items.${project.id}.category`) }}
+                    {{ project.category }}
                   </span>
                   <span class="font-display text-4xl md:text-5xl text-white/10 font-bold">0{{ index + 1 }}</span>
                 </div>
 
                 <div class="mt-8 mb-8 lg:my-0 relative">
                   <h3 class="text-3xl md:text-5xl lg:text-5xl font-display text-white mb-4 leading-tight group-hover:underline decoration-yellow-500/50 underline-offset-8">
-                    {{ t(`projects.items.${project.id}.title`) }}
+                    {{ project.title }}
                   </h3>
                   <p class="text-gray-300 font-sans text-base md:text-lg lg:text-lg max-w-xl leading-relaxed mb-6">
-                    {{ t(`projects.items.${project.id}.description`) }}
+                    {{ project.description }}
                   </p>
                   
                   <div class="flex gap-2 flex-wrap">
@@ -66,7 +66,6 @@
                  />
                  <div class="absolute inset-0 bg-[#0f0f11]/40 lg:hidden"></div>
               </div>
-
             </div>
           </div>
         </div>
@@ -78,14 +77,12 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
-const { projects } = useProjects()
+const { projects } = await useProjects()
 
 const { t } = useI18n({
   useScope: 'global'
 })
 const emit = defineEmits(['open-project'])
-
-
 </script>
 
 <style scoped>

@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/i18n',
     '@nuxtjs/sitemap',
-    '@nuxtjs/seo'
+    '@nuxtjs/seo',
+    '@nuxt/content',
   ],
   site: {
     url: 'https://franceschina.dev',

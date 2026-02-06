@@ -10,7 +10,7 @@
         >
           <Icon name="ph:caret-left-bold" class="text-2xl" />
           <span class="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-black px-3 py-1 rounded text-xs font-mono uppercase tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 text-white pointer-events-none">
-            {{ t(`projects.items.${prevProject.id}.title`) }}
+            {{ prevProject.title }}
           </span>
         </button>
       </div>
@@ -22,10 +22,11 @@
         >
           <Icon name="ph:caret-right-bold" class="text-2xl" />
           <span class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-black px-3 py-1 rounded text-xs font-mono uppercase tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 text-white pointer-events-none">
-            {{ t(`projects.items.${nextProject.id}.title`) }}
+            {{ nextProject.title }}
           </span>
         </button>
       </div>
+
       <div id="modal-content" tabindex="-1" class="relative w-full md:w-[90vw] lg:w-[80vw] 2xl:max-w-7xl h-full bg-[#111] overflow-y-auto shadow-2xl border-l border-white/10 slide-in flex flex-col">
         
         <div class="absolute top-6 left-6 flex gap-4 md:hidden z-50">
@@ -63,7 +64,7 @@
 
             <div class="absolute inset-0 bg-gradient-to-t from-[#111] via-[#111]/80 to-transparent flex items-end p-6 md:p-16 lg:p-24 pointer-events-none">
               <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display text-white leading-[1.1] max-w-5xl shadow-black drop-shadow-lg">
-                {{ t(`projects.items.${project.id}.title`) }}
+                {{ project.title }}
               </h1>
             </div>
           </div>
@@ -76,7 +77,7 @@
                   {{ t('projects.modal.challenge') }}
                 </h3>
                 <p class="leading-relaxed text-base md:text-lg text-gray-300 font-light">
-                  {{ t(`projects.items.${project.id}.challenge_text`) }}
+                  {{ project.challenge_text }}
                 </p>
               </div>
 
@@ -117,7 +118,7 @@
                   {{ t('projects.modal.development') }}
                 </h3>
                 <p class="leading-relaxed text-base md:text-lg text-gray-300 font-light">
-                  {{ t(`projects.items.${project.id}.development_text`, t(`projects.items.${project.id}.description`)) }}
+                  {{ project.development_text }}
                 </p>
               </div>
             </div>
@@ -160,7 +161,7 @@
                 {{ t('projects.modal.result') }}
               </h3>
               <p class="text-lg md:text-2xl font-light leading-relaxed text-white italic font-serif">
-                "{{ t(`projects.items.${project.id}.result_text`) }}"
+                "{{ project.result_text }}"
               </p>
             </div>
           </div>

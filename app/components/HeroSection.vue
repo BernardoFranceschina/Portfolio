@@ -41,7 +41,7 @@
         <span class="block text-gray-400 text-lg md:text-2xl lg:text-3xl font-sans font-normal mb-4 md:mb-6 tracking-widest uppercase pl-3 border-l-2 border-yellow-400/50">
           {{ t('hero.tagline') }}
         </span>
-        <i18n-t keypath="hero.title" tag="span">
+        <i18n-t keypath="hero.title" tag="span" scope="global">
           <template #highlight>
             <span class="relative whitespace-nowrap inline-block mt-1 md:mt-2">
               <span class="absolute inset-0 bg-yellow-400/90 -rotate-1 skew-x-3 rounded-sm transform origin-left animate-highlight"></span>

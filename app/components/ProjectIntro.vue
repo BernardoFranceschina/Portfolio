@@ -31,7 +31,7 @@ const { t } = useI18n({
             </span>
             
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-light leading-tight">
-              <i18n-t keypath="intro.heading" tag="span">
+              <i18n-t keypath="intro.heading" tag="span" scope="global">
                 <template #break>
                   <br />
                 </template>
@@ -56,7 +56,7 @@ const { t } = useI18n({
           <div class="hidden md:block absolute left-[-1.5rem] top-0 bottom-0 w-[1px] bg-white/10"></div>
           
           <p class="text-lg md:text-2xl lg:text-3xl leading-relaxed font-light text-gray-200">
-            <i18n-t keypath="intro.title" tag="span">
+            <i18n-t keypath="intro.title" tag="span" scope="global">
               <template #highlight>
                 <span class="text-white font-serif italic border-b border-yellow-500/30 pb-1">
                   {{ t('intro.title_highlight') }}
@@ -66,7 +66,7 @@ const { t } = useI18n({
           </p>
 
           <p class="mt-6 md:mt-8 text-base md:text-lg text-gray-400 font-sans max-w-2xl leading-relaxed">
-            <i18n-t keypath="intro.subtitle" tag="span">
+            <i18n-t keypath="intro.subtitle" tag="span" scope="global">
               <template #break>
                 <br /><br />
               </template>

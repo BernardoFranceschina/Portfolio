@@ -34,9 +34,12 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+
 const { t, locale } = useI18n()
 
-const { projects } = useProjects()
+const { projects } = await useProjects()
+
+
 const isProjectOpen = ref(false)
 const activeProject = ref(null)
 
@@ -46,23 +49,25 @@ const scrollToProjects = () => {
 }
 
 const openProject = (project) => {
+  console.log(project);
+  
   activeProject.value = project
   isProjectOpen.value = true
 }
 
 const activeIndex = computed(() => {
-  if (!activeProject.value) return -1
-  return projects.findIndex(p => p.id === activeProject.value.id)
+  if (!activeProject.value || !projects.value) return -1
+  return projects.value.findIndex(p => p.id === activeProject.value.id)
 })
 
 const nextProject = computed(() => {
-  if (activeIndex.value === -1 || activeIndex.value === projects.length - 1) return null
-  return projects[activeIndex.value + 1]
+  if (!projects.value || activeIndex.value === -1 || activeIndex.value === projects.value.length - 1) return null
+  return projects.value[activeIndex.value + 1]
 })
 
 const prevProject = computed(() => {
-  if (activeIndex.value <= 0) return null
-  return projects[activeIndex.value - 1]
+  if (!projects.value || activeIndex.value <= 0) return null
+  return projects.value[activeIndex.value - 1]
 })
 
 const siteUrl = 'https://franceschina.dev/'
