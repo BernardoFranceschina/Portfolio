@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/fonts',
     '@nuxt/icon',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@nuxtjs/sitemap'
   ],
 
   app: {
@@ -15,6 +16,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    baseUrl: 'https://franceschina.dev',
     vueI18n: './i18n.config.ts',
     langDir: 'locales',
     strategy: 'prefix_except_default', // PT fica em '/', EN fica em '/en'

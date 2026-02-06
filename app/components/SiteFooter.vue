@@ -50,21 +50,21 @@
           </h4>
           <ul class="space-y-4">
             <li>
-              <a :href="linkedinUrl" target="_blank" class="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors w-fit">
+              <a :href="linkedinUrl" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors w-fit">
                 <Icon name="mdi:linkedin" class="text-xl opacity-60 group-hover:opacity-100 transition-opacity" />
                 <span class="text-sm font-medium">LinkedIn</span>
                 <Icon name="ph:arrow-right" class="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-yellow-500" />
               </a>
             </li>
              <li>
-              <a :href="githubUrl" target="_blank" class="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors w-fit">
+              <a :href="githubUrl" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors w-fit">
                 <Icon name="mdi:github" class="text-xl opacity-60 group-hover:opacity-100 transition-opacity" />
                 <span class="text-sm font-medium">GitHub</span>
                 <Icon name="ph:arrow-right" class="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-yellow-500" />
               </a>
             </li>
              <li>
-              <a :href="sourceCodeUrl" target="_blank" class="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors w-fit">
+              <a :href="sourceCodeUrl" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors w-fit">
                 <Icon name="ph:code" class="text-xl opacity-60 group-hover:opacity-100 transition-opacity" />
                 <span class="text-sm font-medium">{{ t('footer.source_code') }}</span>
                 <Icon name="ph:arrow-right" class="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-yellow-500" />

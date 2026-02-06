@@ -60,7 +60,7 @@
 
       <div class="w-fit pl-3">
         <button class="group relative px-6 py-3 md:px-8 md:py-4 rounded-full border border-white/20 bg-transparent hover:bg-white text-white hover:text-black transition-all duration-300 ease-out flex items-center gap-3 overflow-hidden">
-          <span class="relative z-10 font-medium tracking-wide text-sm md:text-lg" @click.prevent="scrollToSection('#projetos')">{{ t('hero.cta') }}</span>
+          <span class="relative z-10 font-medium tracking-wide text-sm md:text-lg" @click.prevent="scrollToSection('#projects')">{{ t('hero.cta') }}</span>
           <Icon name="ph:arrow-right" class="relative z-10 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>

@@ -27,6 +27,7 @@
 
       <button 
         @click="isMobileMenuOpen = !isMobileMenuOpen"
+        aria-label="Abrir menu de navegação"
         class="md:hidden w-10 h-10 flex items-center justify-center text-gray-300 hover:text-white transition-colors"
       >
         <Icon :name="isMobileMenuOpen ? 'ph:x-bold' : 'ph:list-bold'" class="w-6 h-6" />
