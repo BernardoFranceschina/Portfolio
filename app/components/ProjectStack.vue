@@ -57,7 +57,7 @@
               <div class="w-full lg:w-1/2 h-full absolute lg:relative inset-0 z-0 lg:z-auto">
                 <NuxtImg 
                   :src="project.image"
-                  :alt="`Capa do projeto ${t(`projects.items.${project.id}.title`)}`" 
+                  alt="Imagem capa do projeto" 
                   sizes="100vw sm:50vw md:800px"
                   format="webp"
                   loading="lazy"

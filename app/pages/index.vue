@@ -59,6 +59,25 @@ useHead({
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     { rel: 'canonical', href: siteUrl } 
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ProfilePage',
+        'mainEntity': {
+          '@type': 'Person',
+          'name': 'Bernardo Franceschina',
+          'jobTitle': 'Software Developer',
+          'url': siteUrl,
+          'sameAs': [
+            'https://github.com/bernardofranceschina',
+            'https://linkedin.com/in/bernardo-franceschina' 
+          ]
+        }
+      })
+    }
   ]
 })
 
