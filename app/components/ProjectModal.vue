@@ -1,6 +1,6 @@
 <template>
   <Transition name="modal">
-    <div v-if="isOpen" class="fixed inset-0 z-[999] flex justify-end">
+    <div v-if="isOpen" class="fixed inset-0 z-[999] flex justify-end" ref="modalRef">
       <div class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity" @click="close"></div>
       
       <div class="fixed top-1/2 -translate-y-1/2 left-4 z-[1002] hidden xl:block" v-if="prevProject">
@@ -224,9 +224,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onUnmounted, watch } from 'vue'
+import { ref, onUnmounted, watch, nextTick } from 'vue'
 import { onKeyStroke } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
+import { useFocusTrap } from '@vueuse/integrations/useFocusTrap'
+import type { Project } from '@/types/project'
 
 const { t } = useI18n({
   useScope: 'global'
@@ -234,15 +236,22 @@ const { t } = useI18n({
 
 const props = defineProps<{
   isOpen: boolean
-  project: any
-  nextProject?: any
-  prevProject?: any
+  project: Project
+  nextProject?: Project | null
+  prevProject?: Project| null
 }>()
 
 const emit = defineEmits(['close', 'navigate'])
-
+const modalRef = ref<HTMLElement | null>(null)
 const zoomedImage = ref<string | null>(null)
 const isZoomLoading = ref(false)
+
+const { activate, deactivate } = useFocusTrap(modalRef, {
+  immediate: false,
+  escapeDeactivates: false,
+  allowOutsideClick: true,
+  fallbackFocus: '#modal-content'
+})
 
 onKeyStroke('Escape', (e) => {
   if (props.isOpen) emit('close')
@@ -277,8 +286,21 @@ watch(() => props.isOpen, (isOpen) => {
   }
 }, { immediate: true })
 
+// Watcher principal para ativar o Focus Trap
+watch(() => props.isOpen, async (val) => {
+  if (val) {
+    await nextTick() // Aguarda o v-if renderizar o elemento no DOM
+    if (modalRef.value) {
+      activate()
+    }
+  } else {
+    deactivate()
+  }
+})
+
 onUnmounted(() => {
   document.body.style.overflow = ''
+  deactivate()
 })
 
 const close = () => {
