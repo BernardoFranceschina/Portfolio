@@ -6,97 +6,97 @@
     "contact": "Contact"
   },
   "hero": {
-    "tagline": "Full Stack Developer",
-    "title": "I build systems that {highlight} end to end.",
-    "title_highlight": "deliver",
-    "subtitle": "4+ years shipping production platforms — from automotive telemetry with Renault to clinical SaaS tools. Laravel, Vue.js, and a relentless focus on the details users feel but never see.",
-    "cta": "See my work",
+    "tagline": "Full stack developer",
+    "title": "I build systems that {highlight} from start to finish.",
+    "title_highlight": "work",
+    "subtitle": "5+ years delivering complete platforms - from automotive telemetry to SaaS. Delivering the detail the user feels but doesn't see.",
+    "cta": "View projects",
     "scroll_hint": "scroll"
   },
   "about": {
-    "label": "// About me",
+    "label": "// Who I am",
     "heading": "Bernardo {highlight}",
     "heading_highlight": "Franceschina",
-    "bio_1": "Full Stack Developer based in Florianópolis, Brazil. Computer Science student at UFSC (Federal University of Santa Catarina). I started at a software house building ERPs and multi-tenant systems, grew into freelancing where I own projects end-to-end, and now also contribute to applied research at LISHA/UFSC in partnership with Renault.",
-    "bio_2": "What sets me apart is {highlight}: I architect backends with the same depth I bring to frontends. I design the database schema, build the API, craft the interface, and configure the deployment. Every project here reflects that complete ownership.",
-    "bio_highlight": "true full stack thinking",
+    "bio_1": "Full stack developer from Florianópolis, pursuing a degree in Computer Science at UFSC. I started in a software house building ERPs and multi-tenant systems, evolved to freelance delivering end-to-end platforms, and today I contribute to applied research at LISHA/UFSC in partnership with Renault.",
+    "bio_2": "My competitive advantage is having a {highlight}: mastering the backend with the same depth as the frontend. I design the architecture, implement the API, build the interface, and configure the deployment. Every project here reflects this complete vision.",
+    "bio_highlight": "real full stack vision",
     "stats": {
-      "experience": "4+",
+      "experience": "5+",
       "experience_label": "years of experience",
       "projects": "10+",
-      "projects_label": "projects shipped",
+      "projects_label": "delivered projects",
       "stack": "Laravel + Vue",
-      "stack_label": "core stack"
+      "stack_label": "main stack"
     },
     "timeline": {
-      "title": "Journey",
+      "title": "Career path",
       "d3t": {
-        "year": "2020–2022",
-        "role": "Full Stack Dev — D3T Software",
-        "desc": "Software house. ERPs, multi-tenant systems, interactive dental charts. First exposure to complex production systems."
+        "year": "2020-2022",
+        "role": "Full stack dev - D3T Softwares Personalizados",
+        "desc": "Software house. ERPs, multi-tenant systems, interactive odontogram. First contact with complex projects in production."
       },
       "freelance": {
-        "year": "2022–now",
-        "role": "Freelance — Independent Projects",
-        "desc": "EdTech platforms, clinical SaaS, payment gateway integrations. Full project ownership: architecture, code, deployment."
+        "year": "2022-present",
+        "role": "Freelance - Own projects",
+        "desc": "EdTech platforms, clinical SaaS, payment gateway integration. Total responsibility: architecture, code, deployment."
       },
       "ufsc": {
-        "year": "2024–now",
-        "role": "Research Fellow LISHA/UFSC — Renault & Horse",
-        "desc": "Automotive telemetry, Edge-to-Cloud pipelines, MQTT, CI/CD. Bridging academia and industry."
+        "year": "2024-present",
+        "role": "Research scholar LISHA/UFSC - Renault & Horse",
+        "desc": "Automotive telemetry, Edge-to-Cloud pipeline, MQTT, CI/CD. Bridge between academia and industry."
       }
     }
   },
   "intro": {
-    "marquee": "DESIGN • BUILD • SHIP • ITERATE •",
+    "marquee": "Design • build • deliver • iterate •",
     "label": "// Portfolio",
     "heading": "Projects {break} {highlight}",
     "heading_highlight": "in production",
-    "system": "All projects: Live",
+    "system": "All projects online",
     "title": "Every project below is running {highlight} right now.",
     "title_highlight": "in production",
-    "subtitle": "These aren't academic exercises or abandoned side projects. They're systems solving real problems for real businesses and professionals. {break} Click any project to see the technical challenge, architecture decisions, and {highlight}.",
-    "subtitle_highlight": "concrete results",
-    "scroll": "EXPLORE BELOW"
+    "subtitle": "These are systems that solve real problems for real companies and professionals. {break} Click on any project to see the technical challenge, the architectural decisions, and the {highlight}.",
+    "subtitle_highlight": "concrete result",
+    "scroll": "Explore below"
   },
   "projects": {
-    "section_title": "Selected",
-    "section_subtitle": "Projects",
+    "section_title": "Projects",
+    "section_subtitle": "Selected",
     "view_case": "View case study",
     "modal": {
-      "challenge": "The Challenge",
-      "stack": "Tech Stack",
-      "features": "Key Features",
-      "highlights": "Technical Highlights",
-      "result": "The Result",
-      "development": "The Solution",
+      "challenge": "The challenge",
+      "stack": "Tech stack",
+      "features": "Main features",
+      "highlights": "Technical highlights",
+      "result": "The result",
+      "development": "The solution",
       "year": "Year",
       "company": "Company",
       "role_label": "Role",
       "status": "Status",
-      "online": "In Production"
+      "online": "In production"
     }
   },
   "footer": {
-    "next_step": "// Next Step",
+    "next_step": "// Next step",
     "cta_heading": "Have a project in mind?",
     "cta_highlight": "Let's build it together.",
-    "send_email": "Send Email",
-    "role": "Full Stack Developer · Laravel & Vue.js",
+    "send_email": "Send email",
+    "role": "Full stack developer",
     "status": "Available for new projects",
     "connect": "Links",
-    "source_code": "This site's source",
-    "main_email": "Primary email",
+    "source_code": "Source code for this site",
+    "main_email": "Main email",
     "copied": "Copied!",
-    "download_cv": "Download Resume",
+    "download_cv": "Download resume",
     "cv_link": "/cv_bernardo_franceschina_en_us.pdf",
     "rights": "All rights reserved.",
     "location": "Florianópolis, Brazil",
     "made_with": "Made with"
   },
   "meta": {
-    "title": "Bernardo Franceschina | Full Stack Developer — Laravel & Vue.js",
-    "description": "Full Stack Developer specializing in Laravel and Vue.js. 4+ years building production platforms, from ERPs to automotive telemetry systems.",
-    "og_image_alt": "Bernardo Franceschina Portfolio — Full Stack Developer"
+    "title": "Bernardo Franceschina | Full stack developer - Laravel & Vue.js",
+    "description": "Full stack developer specialized in Laravel and Vue.js. 5+ years building complete platforms, from ERPs to automotive telemetry systems.",
+    "og_image_alt": "Portfolio of Bernardo Franceschina - Full stack developer"
   }
 }

@@ -9,7 +9,7 @@
     "tagline": "Full Stack Developer",
     "title": "Construo sistemas que {highlight} do início ao fim.",
     "title_highlight": "funcionam",
-    "subtitle": "+4 anos entregando plataformas completas — de telemetria automotiva com a Renault a SaaS de gestão clínica. Laravel, Vue.js e obsessão pelo detalhe que o usuário sente mas não vê.",
+    "subtitle": "5+ anos entregando plataformas completas - de telemetria automotiva a SaaS. Entregando o detalhe que o usuário sente mas não vê.",
     "cta": "Ver projetos",
     "scroll_hint": "scroll"
   },
@@ -17,11 +17,11 @@
     "label": "// Quem sou",
     "heading": "Bernardo {highlight}",
     "heading_highlight": "Franceschina",
-    "bio_1": "Desenvolvedor Full Stack de Florianópolis, graduando em Ciências da Computação pela UFSC. Comecei em uma software house construindo ERPs e sistemas multi-tenant, evoluí para freelance entregando plataformas de ponta a ponta, e hoje também contribuo em pesquisa aplicada no LISHA/UFSC em parceria com a Renault.",
-    "bio_2": "Meu diferencial é a {highlight}: dominar o backend com a mesma profundidade que o frontend. Desenho a arquitetura, implemento a API, construo a interface e configuro o deploy. Cada projeto aqui reflete essa visão completa.",
+    "bio_1": "Desenvolvedor full stack de Florianópolis, graduando em Ciências da Computação pela UFSC. Comecei em uma software house construindo ERPs e sistemas multi-tenant, evoluí para freelance entregando plataformas de ponta a ponta, e hoje contribuo em pesquisa aplicada no LISHA/UFSC em parceria com a Renault.",
+    "bio_2": "Meu diferencial é ter {highlight}: dominar o backend com a mesma profundidade que o frontend. Desenho a arquitetura, implemento a API, construo a interface e configuro o deploy. Cada projeto aqui reflete essa visão completa.",
     "bio_highlight": "visão full stack real",
     "stats": {
-      "experience": "+4",
+      "experience": "5+",
       "experience_label": "anos de experiência",
       "projects": "10+",
       "projects_label": "projetos entregues",
@@ -31,18 +31,18 @@
     "timeline": {
       "title": "Trajetória",
       "d3t": {
-        "year": "2020–2022",
-        "role": "Dev Full Stack — D3T Softwares",
+        "year": "2020-2022",
+        "role": "Dev full stack - D3T Softwares Personalizados",
         "desc": "Software house. ERPs, sistemas multi-tenant, odontograma interativo. Primeiro contato com projetos complexos em produção."
       },
       "freelance": {
-        "year": "2022–hoje",
-        "role": "Freelance — Projetos Próprios",
+        "year": "2022-hoje",
+        "role": "Freelance - Projetos próprios",
         "desc": "Plataformas EdTech, SaaS clínico, integração com gateways de pagamento. Responsabilidade total: arquitetura, código, deploy."
       },
       "ufsc": {
-        "year": "2024–hoje",
-        "role": "Bolsista LISHA/UFSC — Renault & Horse",
+        "year": "2024-hoje",
+        "role": "Bolsista LISHA/UFSC - Renault & Horse",
         "desc": "Telemetria automotiva, pipeline Edge-to-Cloud, MQTT, CI/CD. Ponte entre academia e indústria."
       }
     }
@@ -52,10 +52,10 @@
     "label": "// Portfólio",
     "heading": "Projetos {break} {highlight}",
     "heading_highlight": "em produção",
-    "system": "Todos os projetos: Online",
+    "system": "Todos os projetos online",
     "title": "Cada projeto abaixo está rodando {highlight} agora.",
     "title_highlight": "em produção",
-    "subtitle": "Não são exercícios acadêmicos nem side projects abandonados. São sistemas que resolvem problemas reais de empresas e profissionais reais. {break} Clique em qualquer projeto para ver o desafio técnico, as decisões de arquitetura e o {highlight}.",
+    "subtitle": "São sistemas que resolvem problemas reais de empresas e profissionais reais. {break} Clique em qualquer projeto para ver o desafio técnico, as decisões de arquitetura e o {highlight}.",
     "subtitle_highlight": "resultado concreto",
     "scroll": "EXPLORE ABAIXO"
   },
@@ -64,12 +64,12 @@
     "section_subtitle": "Selecionados",
     "view_case": "Ver estudo de caso",
     "modal": {
-      "challenge": "O Desafio",
-      "stack": "Stack Técnica",
-      "features": "Funcionalidades Principais",
-      "highlights": "Destaques Técnicos",
-      "result": "O Resultado",
-      "development": "A Solução",
+      "challenge": "O desafio",
+      "stack": "Stack técnica",
+      "features": "Funcionalidades principais",
+      "highlights": "Destaques técnicos",
+      "result": "O resultado",
+      "development": "A solução",
       "year": "Ano",
       "company": "Empresa",
       "role_label": "Papel",
@@ -78,11 +78,11 @@
     }
   },
   "footer": {
-    "next_step": "// Próximo Passo",
+    "next_step": "// Próximo passo",
     "cta_heading": "Tem um projeto em mente?",
     "cta_highlight": "Vamos construir juntos.",
-    "send_email": "Enviar Email",
-    "role": "Full Stack Developer · Laravel & Vue.js",
+    "send_email": "Enviar email",
+    "role": "Full stack developer",
     "status": "Disponível para novos projetos",
     "connect": "Links",
     "source_code": "Código deste site",
@@ -95,8 +95,8 @@
     "made_with": "Feito com"
   },
   "meta": {
-    "title": "Bernardo Franceschina | Full Stack Developer — Laravel & Vue.js",
-    "description": "Desenvolvedor Full Stack especializado em Laravel e Vue.js. +4 anos construindo plataformas completas, de ERPs a sistemas de telemetria automotiva.",
-    "og_image_alt": "Portfolio de Bernardo Franceschina — Full Stack Developer"
+    "title": "Bernardo Franceschina | Full Stack Developer - Laravel & Vue.js",
+    "description": "Desenvolvedor Full Stack especializado em Laravel e Vue.js. 5+ anos construindo plataformas completas, de ERPs a sistemas de telemetria automotiva.",
+    "og_image_alt": "Portfolio de Bernardo Franceschina - Full Stack Developer"
   }
 }
