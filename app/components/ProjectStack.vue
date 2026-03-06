@@ -25,24 +25,33 @@
           >
             
             <div class="absolute inset-0 flex flex-col lg:flex-row">
-              <div class="w-full lg:w-1/2 p-8 md:p-12 flex flex-col justify-between z-20 bg-gradient-to-b lg:bg-gradient-to-r from-black/90 via-black/50 to-transparent">
+              <div class="w-full lg:w-1/2 p-8 md:p-12 flex flex-col justify-between z-20 bg-gradient-to-b lg:bg-gradient-to-r from-black/90 via-black/60 to-transparent">
                 <div class="flex justify-between items-start">
-                  <span class="font-mono text-xs border border-white/20 px-3 py-1 rounded-full uppercase tracking-wider text-white/80">
-                    {{ project.category }}
-                  </span>
+                  <div class="flex items-center gap-3">
+                    <span class="font-mono text-xs border border-white/20 px-3 py-1 rounded-full uppercase tracking-wider text-white/80">
+                      {{ project.category }}
+                    </span>
+                    <span class="font-mono text-xs text-white/40">{{ project.year }}</span>
+                  </div>
                   <span class="font-display text-4xl md:text-5xl text-white/10 font-bold">0{{ index + 1 }}</span>
                 </div>
 
                 <div class="mt-8 mb-8 lg:my-0 relative">
-                  <h3 class="text-3xl md:text-5xl lg:text-5xl font-display text-white mb-4 leading-tight group-hover:underline decoration-yellow-500/50 underline-offset-8">
+                  <h3 class="text-3xl md:text-4xl lg:text-5xl font-display text-white mb-4 leading-tight group-hover:underline decoration-yellow-500/50 underline-offset-8">
                     {{ project.title }}
                   </h3>
-                  <p class="text-gray-300 font-sans text-base md:text-lg lg:text-lg max-w-xl leading-relaxed mb-6">
+                  <p class="text-gray-300 font-sans text-sm md:text-base lg:text-lg max-w-xl leading-relaxed mb-6">
                     {{ project.description }}
                   </p>
                   
                   <div class="flex gap-2 flex-wrap">
-                    <span v-for="tag in project.tags" :key="tag" class="text-xs font-mono text-gray-400">#{{ tag }}</span>
+                    <span 
+                      v-for="tag in project.tags.slice(0, 5)" 
+                      :key="tag" 
+                      class="text-[11px] font-mono text-gray-500 bg-white/5 px-2 py-0.5 rounded border border-white/5"
+                    >
+                      {{ tag }}
+                    </span>
                   </div>
                 </div>
 

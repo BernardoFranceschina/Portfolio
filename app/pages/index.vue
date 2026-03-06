@@ -1,16 +1,19 @@
 <template>
-  <div class="bg-[#0a0a0a] min-h-screen selection:bg-yellow-500/30">
+  <div class="bg-[#0a0a0c] min-h-screen selection:bg-yellow-500/30">
     
     <SiteNavbar />
+
     <main id="site-content">
       <div id="home">
-        <HeroSection @scroll-request="scrollToProjects" />
+        <HeroSection />
       </div>
 
-      <ProjectIntro />
+      <div id="about">
+        <AboutSection />
+      </div>
 
       <div id="projects">
-        <ProjectStack @open-project="openProject"/>
+        <ProjectsSection @open-project="openProject" />
       </div>
 
       <ProjectModal
@@ -27,7 +30,6 @@
     <div id="contact">
       <SiteFooter />
     </div>
-
   </div>
 </template>
 
@@ -36,21 +38,12 @@ import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t, locale } = useI18n()
-
 const { projects } = await useProjects()
-
 
 const isProjectOpen = ref(false)
 const activeProject = ref(null)
 
-const scrollToProjects = () => {
-  const el = document.getElementById('projects');
-  if(el) el.scrollIntoView({ behavior: 'smooth' });
-}
-
 const openProject = (project) => {
-  console.log(project);
-  
   activeProject.value = project
   isProjectOpen.value = true
 }
@@ -73,16 +66,14 @@ const prevProject = computed(() => {
 const siteUrl = 'https://franceschina.dev/'
 
 useHead({
-  titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk}` : 'Bernardo Franceschina Portfolio'
-  },
+  titleTemplate: (titleChunk) => titleChunk || 'Bernardo Franceschina Portfolio',
   htmlAttrs: {
     lang: computed(() => locale.value === 'pt' ? 'pt-BR' : 'en-US'),
-    class: 'bg-[#0f0f11]'
+    class: 'bg-[#0a0a0c]'
   },
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    { rel: 'canonical', href: siteUrl } 
+    { rel: 'canonical', href: siteUrl }
   ],
   script: [
     {
@@ -93,11 +84,11 @@ useHead({
         'mainEntity': {
           '@type': 'Person',
           'name': 'Bernardo Franceschina',
-          'jobTitle': 'Software Developer',
+          'jobTitle': 'Full Stack Developer',
           'url': siteUrl,
           'sameAs': [
             'https://github.com/bernardofranceschina',
-            'https://linkedin.com/in/bernardo-franceschina' 
+            'https://linkedin.com/in/bernardo-franceschina'
           ]
         }
       })
@@ -108,44 +99,44 @@ useHead({
 useSeoMeta({
   title: computed(() => t('meta.title')),
   description: computed(() => t('meta.description')),
-  
   ogTitle: computed(() => t('meta.title')),
   ogDescription: computed(() => t('meta.description')),
   ogType: 'website',
   ogSiteName: 'Bernardo Franceschina Portfolio',
   ogUrl: siteUrl,
-  
-  ogImage: `${siteUrl}/og_image.png`,
+  ogImage: `${siteUrl}og_image.png`,
   ogImageAlt: computed(() => t('meta.og_image_alt')),
   ogImageWidth: 1200,
   ogImageHeight: 630,
-
   twitterCard: 'summary_large_image',
   twitterTitle: computed(() => t('meta.title')),
   twitterDescription: computed(() => t('meta.description')),
-  twitterImage: `${siteUrl}/og_image.png`,
-  
-  themeColor: '#0f0f11'
+  twitterImage: `${siteUrl}og_image.png`,
+  themeColor: '#0a0a0c'
 })
 </script>
 
 <style>
 html {
   scroll-behavior: smooth;
-  background-color: #0f0f11;
+  background-color: #0a0a0c;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0c; }
+::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
+
+/* Global type smoothing */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-::-webkit-scrollbar-track {
-  background: #0f0f11; 
-}
-::-webkit-scrollbar-thumb {
-  background: #333; 
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+
+/* Selection color */
+::selection {
+  background: rgba(250, 204, 21, 0.3);
+  color: #fff;
 }
 </style>

@@ -1,18 +1,32 @@
 ---
 locale: "pt"
 order: 1
-
 title: "Sistema Inteligente de Aquisição e Análise para ECUs"
-description: "Sistema de telemetria avançada e gestão de experimentos para engenharia automotiva, em parceria com Renault e Horse."
+description: "Pipeline Edge-to-Cloud de telemetria automotiva em tempo real, com MQTT, dashboards reativos e deploy automatizado via CI/CD."
 category: "Automotivo / P&D"
 image: "/iase/iase_image.png"
 second_image: "/iase/iase_dev.png"
 architecture_image: "/iase/iase_architecture.png"
-color: "bg-[#674E0B]" # Must configure on tailwind.config.js
-tags: ["Docker", "Nginx", "Vue.js", "Django", "MQTT", "CI/CD"]
+color: "bg-[#674E0B]"
+tags: ["Docker", "Nginx", "Vue.js", "Django", "MQTT", "CI/CD", "Chart.js", "Leaflet"]
 year: "2024 - 2026"
 company: "UFSC / Renault / Horse"
-challenge_text: "O desafio era criar um pipeline de dados Edge-to-Cloud robusto o suficiente para suportar a aquisição de dados críticos de veículos em movimento via 5G. Era necessário orquestrar a configuração remota de hardware embarcado e garantir a integridade dos arquivos gerados em alta frequência, tudo isso enquanto se gerenciava uma infraestrutura complexa com múltiplos serviços interdependentes."
-development_text: "A solução exigiu uma orquestração precisa entre os serviços para garantir a integridade dos dados vindos da placa. Desenvolvi a lógica de controle que sincroniza a recepção de pacotes de alta frequência com a persistência em disco, evitando gargalos de I/O. No front-end, o desafio foi construir uma arquitetura de estado reativa, capaz de renderizar gráficos de alta densidade sem travamentos, permitindo ao usuário alternar fluidamente entre o monitoramento ao vivo de frotas e a análise de relatórios dos experimentos executados."
-result_text: "Transformamos o veículo de teste em um laboratório conectado. A solução eliminou a barreira física dos testes de campo, permitindo que equipes configurem experimentos e analisem telemetria crítica em tempo real, reduzindo drasticamente o ciclo de feedback entre a pista de testes e o laboratório de P&D."
+role: "Frontend Lead & DevOps"
+features:
+  - "Dashboards reativos com Chart.js para visualização de dados de sensores em tempo real"
+  - "Mapas interativos com Leaflet para rastreamento GPS de frotas de veículos"
+  - "Pipeline MQTT para captura de dados de ECUs em alta frequência via 5G"
+  - "Configuração remota de hardware embarcado diretamente pela plataforma"
+  - "Gestão de experimentos com relatórios e análise de telemetria"
+  - "Sistema de gerenciamento de arquivos de calibração automotiva"
+highlights:
+  - "Deploy zero-downtime com GitLab CI/CD e self-hosted runner"
+  - "Docker multi-stage build — imagem final sem Node.js, drasticamente menor"
+  - "Nginx com HTTPS automático via Certbot e proxy reverso para múltiplos serviços"
+  - "Stores individuais por entidade com Pinia para estado global performático"
+  - "Composables reutilizáveis organizados por domínio"
+  - "Git submodules separando responsabilidades entre frontend e backend"
+challenge_text: "A Renault precisava de uma plataforma capaz de capturar dados de ECUs em veículos em movimento via 5G, configurar remotamente hardware embarcado e garantir integridade de arquivos gerados em alta frequência — tudo isso com múltiplos serviços interdependentes. O pipeline tinha que ser robusto o suficiente para que nenhum pacote de dados críticos fosse perdido entre a placa e a nuvem."
+development_text: "Construí a lógica de controle que sincroniza a recepção de pacotes MQTT de alta frequência com a persistência em disco, eliminando gargalos de I/O. No frontend, arquitetei um sistema de estado reativo com Pinia capaz de renderizar gráficos Chart.js de alta densidade sem travamentos, permitindo alternar fluidamente entre monitoramento ao vivo de frotas via Leaflet e análise de relatórios de experimentos. Na infraestrutura, implementei CI/CD com GitLab, deploy zero-downtime com Docker multi-stage e Nginx com HTTPS automático via Certbot."
+result_text: "Transformamos o veículo de teste em um laboratório conectado. Equipes agora configuram experimentos e analisam telemetria crítica em tempo real remotamente, eliminando a barreira física entre a pista de testes e o laboratório de P&D."
 ---

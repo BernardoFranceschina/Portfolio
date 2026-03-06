@@ -13,6 +13,9 @@ export interface Project {
   year: string;
   company: string;
   category: string;
+  role: string;
+  features: string[];
+  highlights: string[];
   
   challenge_text: string;
   development_text: string;

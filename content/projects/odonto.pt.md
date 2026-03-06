@@ -1,18 +1,34 @@
 ---
 locale: "pt"
 order: 4
-
 title: "Ecossistema de Franquias"
-description: "Solução integral para gestão de redes de franquias odontológicas, unificando operação clínica, financeira e administrativa."
+description: "ERP multi-tenant para rede de franquias odontológicas: gestão clínica, financeira e administrativa em tempo real com WebSocket."
 category: "ERP / HealthTech"
 image: "/odonto/odonto_image.jpg"
 second_image: "/odonto/odonto_dev.png"
 architecture_image: "/odonto/odonto_architecture.png"
-color: "bg-[#0f172a]" # Must configure on tailwind.config.js
+color: "bg-[#0f172a]"
 tags: ["Laravel", "Vue.js", "Docker", "PostgreSQL", "WebSocket", "AWS"]
 year: "2021 - 2022"
 company: "D3T Inovação Tecnológica"
-challenge_text: "O cenário era a fragmentação. Com múltiplas franquias operando isoladamente, a rede sofria com a falta de padronização e a dificuldade de extrair inteligência de dados consolidados. O desafio técnico foi arquitetar um sistema multi-inquilino capaz de gerenciar desde o micro-estoque de uma clínica até os macro-indicadores de desempenho da rede inteira, sem sacrificar a performance."
-development_text: "Ao longo do ano de evolução contínua, construímos uma plataforma modular. O back-end atua como a espinha dorsal robusta que garante a integridade fiscal e contratual, enquanto o front-end entrega interfaces densas de informação — como o odontograma interativo e agendas dinâmicas — sem perder a fluidez. A complexidade de módulos díspares (Chat, Financeiro, IoT de Estoque) foi abstraída em uma experiência unificada para o usuário final."
-result_text: "O sistema tornou-se o sistema nervoso central da rede. A centralização eliminou gargalos operacionais, permitindo que gestores tomassem decisões baseadas em dados em tempo real e que dentistas focassem no paciente, com todo o fluxo administrativo automatizado, do agendamento à emissão da nota fiscal."
+role: "Full Stack Developer"
+features:
+  - "Arquitetura multi-tenant com isolamento de dados por franquia"
+  - "Odontograma interativo para registros clínicos visuais"
+  - "Agendas dinâmicas com atualização em tempo real via WebSocket"
+  - "Chat interno entre unidades da franquia"
+  - "Módulo financeiro com emissão de NF-e"
+  - "Controle de estoque com IoT para materiais odontológicos"
+  - "Painel de super admin com indicadores consolidados de toda a rede"
+  - "Gestão de contratos e documentos por franqueado"
+highlights:
+  - "Sistema multi-tenant com PostgreSQL garantindo isolamento fiscal entre franquias"
+  - "WebSocket para atualizações em tempo real nas agendas e chat"
+  - "Módulos díspares (Chat, Financeiro, IoT) abstraídos em experiência unificada"
+  - "Deploy containerizado com Docker na AWS"
+  - "Ano de evolução contínua com entregas incrementais"
+  - "Interfaces densas de informação sem perder fluidez na navegação"
+challenge_text: "Múltiplas franquias odontológicas operavam em silos — sem padronização, sem dados consolidados, sem visão de rede. O desafio técnico era arquitetar um sistema multi-tenant capaz de gerenciar desde o micro-estoque de materiais de uma clínica até os indicadores de desempenho da rede inteira, mantendo isolamento de dados entre franqueados mas permitindo visão global para super admins."
+development_text: "Em um ano de evolução contínua dentro da D3T, construímos uma plataforma modular. O backend Laravel com PostgreSQL garante integridade fiscal e contratual com isolamento por tenant. O frontend entrega interfaces densas — odontograma interativo, agendas dinâmicas com atualização via WebSocket, chat interno entre unidades, módulo financeiro com NF-e. A complexidade de módulos díspares (Chat, Financeiro, IoT de Estoque) foi abstraída em uma experiência unificada, deployada em containers Docker na AWS."
+result_text: "O sistema tornou-se o sistema nervoso central da rede. Gestores tomam decisões baseadas em dados consolidados em tempo real. Dentistas focam no paciente com todo o fluxo administrativo automatizado — do agendamento à emissão da nota fiscal."
 ---

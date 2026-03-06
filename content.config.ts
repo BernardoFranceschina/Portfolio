@@ -18,6 +18,9 @@ export default defineContentConfig({
         year: z.string(),
         company: z.string(),
         category: z.string(),
+        role: z.string().default('Full Stack Developer'),
+        features: z.array(z.string()).default([]),
+        highlights: z.array(z.string()).default([]),
         
         locale: z.string(), 
         
