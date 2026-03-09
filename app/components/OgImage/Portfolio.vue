@@ -150,10 +150,10 @@ const {
         <!-- Pill -->
         <div style="display: flex; align-items: center;">
          
-            <div style="font-size: 20px; font-weight: 800; color: #eab308;">&lt;/&gt;</div>
+            <div style="font-size: 24px; font-weight: 800; color: #eab308;">&lt;/&gt;</div>
             <div
               style="
-                font-size: 19px;
+                font-size: 24px;
                 font-style: italic;
                 font-weight: 600;
                 color: rgba(255, 255, 255, 0.7);
@@ -181,7 +181,7 @@ const {
         <!-- Description -->
         <div
           style="
-            font-size: 24px;
+            font-size: 32px;
             color: rgba(255, 255, 255, 0.42);
             line-height: 1.5;
             font-weight: 400;
@@ -193,12 +193,12 @@ const {
         </div>
 
         <!-- Spacer -->
-        <div style="flex: 1;margin-bottom: 30px;"></div>
+        <div style="flex: 1;margin-bottom: 20px;"></div>
 
         <!-- URL -->
         <div
           style="
-            font-size: 20px;
+            font-size: 28px;
             color: rgba(255, 255, 255, 0.3);
             font-weight: 500;
             letter-spacing: 0.03em;
@@ -222,7 +222,7 @@ const {
         >
           <div
             style="
-              font-size: 22px;
+              font-size: 30px;
               font-weight: 700;
               color: #000000;
               letter-spacing: 0.01em;

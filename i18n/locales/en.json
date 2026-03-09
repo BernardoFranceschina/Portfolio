@@ -113,6 +113,7 @@
   "meta": {
     "title": "Bernardo Franceschina | Full stack developer - Laravel & Vue.js",
     "description": "Full stack developer specialized in Laravel and Vue.js. 5+ years building complete platforms, from ERPs to automotive telemetry systems.",
-    "og_image_alt": "Portfolio of Bernardo Franceschina - Full stack developer"
+    "og_image_alt": "Portfolio of Bernardo Franceschina - Full stack developer",
+    "og_description": "Full stack developer with over 5 years of experience delivering complete platforms."
   }
 }

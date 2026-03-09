@@ -110,15 +110,15 @@ useHead({
 
 useSeoMeta({
   title: computed(() => t('meta.title')),
-  description: computed(() => t('meta.description')),
+  description: computed(() => t('meta.og_description')),
   ogTitle: computed(() => t('meta.title')),
-  ogDescription: computed(() => t('meta.description')),
+  ogDescription: computed(() => t('meta.og_description')),
   ogType: 'website',
   ogSiteName: 'Bernardo Franceschina Portfolio',
   ogUrl: siteUrl,
   twitterCard: 'summary_large_image',
   twitterTitle: computed(() => t('meta.title')),
-  twitterDescription: computed(() => t('meta.description')),
+  twitterDescription: computed(() => t('meta.og_description')),
   themeColor: '#0a0a0c'
 })
 </script>
