@@ -67,6 +67,16 @@ const prevProject = computed(() => {
 
 const siteUrl = 'https://franceschina.dev/'
 
+defineOgImage({
+  component: 'Portfolio',
+  title: 'Bernardo Franceschina',
+  description: locale.value === 'pt' ? 'Desenvolvedor full stack a mais de 5 anos entregando plataformas completas.' : 'Full stack developer with over 5 years of experience delivering complete platforms.',
+  label: 'Portfolio',
+  cta: locale.value === 'pt' ? 'Ver projetos' : 'View projects',
+  domain: 'franceschina.dev',
+  photo: `${siteUrl}/bernardo.png`,
+})
+
 useHead({
   titleTemplate: (titleChunk) => titleChunk || 'Bernardo Franceschina Portfolio',
   htmlAttrs: {
@@ -106,14 +116,9 @@ useSeoMeta({
   ogType: 'website',
   ogSiteName: 'Bernardo Franceschina Portfolio',
   ogUrl: siteUrl,
-  ogImage: `${siteUrl}og_image.png`,
-  ogImageAlt: computed(() => t('meta.og_image_alt')),
-  ogImageWidth: 1200,
-  ogImageHeight: 630,
   twitterCard: 'summary_large_image',
   twitterTitle: computed(() => t('meta.title')),
   twitterDescription: computed(() => t('meta.description')),
-  twitterImage: `${siteUrl}og_image.png`,
   themeColor: '#0a0a0c'
 })
 </script>
