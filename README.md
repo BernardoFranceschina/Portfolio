@@ -1,68 +1,77 @@
-# Portfolio - Bernardo Franceschina
+<div align="center">
 
-Bem-vindo ao repositório do meu portfólio pessoal. Este projeto não é apenas uma vitrine dos meus trabalhos, mas também uma demonstração prática das tecnologias que domino e da minha filosofia de desenvolvimento: unir a robustez da engenharia de software com a elegância do design.
+# Portfolio
 
-🔗 **Veja online:** [franceschina.dev](https://franceschina.dev/)
+**Bernardo Franceschina** · Full Stack Developer
 
-## 👨‍💻 Sobre o Projeto
 
-Desenvolvi este site com o objetivo de criar uma experiência imersiva para apresentar meus casos de estudo mais complexos. Ao contrário de um currículo estático, queria algo que demonstrasse movimento, interatividade e atenção aos detalhes.
+[franceschina.dev](https://franceschina.dev)
 
-A aplicação é uma **SPA (Single Page Application)** construída com uma arquitetura moderna, focada em performance e UX. Implementei suporte nativo a internacionalização (i18n), permitindo que todo o conteúdo seja consumido em Português ou Inglês sem recarregamentos de página.
+&nbsp;
 
-## 🛠️ Minha Stack Tecnológica
+![Nuxt](https://img.shields.io/badge/Nuxt_4-00DC82?style=for-the-badge&logo=nuxtdotjs&logoColor=white)
+![Vue](https://img.shields.io/badge/Vue_3-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-Para este projeto, escolhi ferramentas que me permitem entregar alta performance e uma excelente experiência de desenvolvimento (DX):
+</div>
 
-* **Core:**
-    * **[Nuxt 4](https://nuxt.com/)**: Utilizei a versão mais recente para aproveitar o *rendering* híbrido e a organização estruturada.
-    * **[Vue 3](https://vuejs.org/)**: Com Composition API e TypeScript para um código modular e tipado.
-* **Interface & Design:**
-    * **[Tailwind CSS](https://tailwindcss.com/)**: Para estilização rápida e consistente, mantendo o design system coeso.
-    * **Tipografia:** Escolhi as fontes *Fraunces* (serif) e *Inter* (sans) para criar um contraste elegante entre o editorial e o técnico.
-    * **Animações:** Implementei transições suaves de página e micro-interações usando CSS transitions e o sistema de transição do Vue.
-* **Funcionalidades:**
-    * **i18n:** Configurei o `@nuxtjs/i18n` com detecção de idioma e rotas prefixadas (`/` e `/en`).
-    * **Imagens:** Otimização automática com `@nuxt/image`.
-    * **Ícones:** Uso do `@nuxt/icon` com Iconify para carregar apenas os ícones necessários.
+&nbsp;
 
-## 📂 O Que Você Vai Encontrar Aqui
+Portfólio pessoal com meus estudos de caso, stack técnica e trajetória profissional.
+Suporte completo a **Português** e **Inglês**.
 
-Organizei o código seguindo as melhores práticas do Nuxt:
+&nbsp;
 
-* **`app/components`**: Meus componentes reutilizáveis. Destaque para o `ProjectStack.vue` (a lista interativa dos projetos) e o `ProjectModal.vue` (que carrega os detalhes e diagramas de arquitetura).
-* **`app/pages`**: A estrutura de roteamento da aplicação.
-* **`a/i18n/locales`**: Onde mantenho os arquivos de tradução (`pt.json` e `en.json`), garantindo que a cópia seja fácil de manter e escalar.
-* **`public`**: Ativos estáticos, incluindo os diagramas de arquitetura que desenhei para cada projeto.
+## ⚡ Stack
 
-## 🚀 Como Executar Localmente
+| Camada | Tecnologias |
+|--------|------------|
+| **Core** | Nuxt 4, Vue 3 (Composition API), TypeScript |
+| **Estilo** | Tailwind CSS, Fraunces + Inter via `@nuxt/fonts` |
+| **Conteúdo** | Nuxt Content com schema Zod, Markdown por locale |
+| **SEO** | Nuxt SEO, OG Image dinâmica (Satori), Sitemap, JSON-LD |
+| **i18n** | Nuxt I18n — rotas prefixadas (PT `/` · EN `/en`) |
+| **Imagens** | Nuxt Image — WebP/AVIF, responsive, lazy loading |
+| **Deploy** | Vercel com Analytics e Speed Insights |
 
-Se você quiser clonar e rodar este projeto na sua máquina:
+&nbsp;
 
-1.  **Clone o repositório:**
-    ```bash
-    git clone https://github.com/bernardofranceschina/portfolio.git
-    cd portfolio
-    ```
+## ✦ Funcionalidades
 
-2.  **Instale as dependências:**
-    ```bash
-    npm install
-    ```
+- Modal de projetos com navegação por teclado e zoom de imagens
+- OG Image gerada dinamicamente com template Vue customizado
+- Scroll reveal via IntersectionObserver (`v-reveal` directive)
+- Language switcher com preservação de scroll
+- Copy-to-clipboard do email e download do CV em PDF
+- SEO completo — Open Graph, Twitter Cards, canonical por locale
 
-3.  **Rode o servidor de desenvolvimento:**
-    ```bash
-    npm run dev
-    ```
-    O projeto estará disponível em `http://localhost:3000`.
+&nbsp;
+
+## 🚀 Executar localmente
+
+```bash
+git clone https://github.com/bernardofranceschina/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+&nbsp;
 
 ## 📬 Contato
 
-Estou sempre aberto a conversar sobre tecnologia, arquitetura de software ou novas oportunidades.
+<div align="center">
 
-* **Email:** [bernardofranceschina@gmail.com](mailto:bernardofranceschina@gmail.com)
-* **LinkedIn:** [linkedin.com/in/bernardo-franceschina](https://linkedin.com/in/bernardo-franceschina/)
-* **GitHub:** [github.com/bernardofranceschina](https://github.com/bernardofranceschina)
+[![Email](https://img.shields.io/badge/Email-bernardofranceschina@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:bernardofranceschina@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Bernardo_Franceschina-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/bernardo-franceschina/)
+[![GitHub](https://img.shields.io/badge/GitHub-bernardofranceschina-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/bernardofranceschina)
 
----
-*© 2026 Bernardo Franceschina. Feito com Nuxt e Tailwind.*
+</div>
+
+&nbsp;
+
+<div align="center">
+<sub>© 2026 Bernardo Franceschina · Feito com Nuxt e Tailwind</sub>
+</div>
