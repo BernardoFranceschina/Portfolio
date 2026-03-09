@@ -1,5 +1,5 @@
 <template>
-  <section class="relative bg-[#0a0a0c] text-white overflow-hidden py-16 md:py-24">
+  <section class="relative bg-[#0a0a0c] text-white overflow-hidden py-16 md:py-24" aria-labelledby="about-heading">
     
     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-yellow-500/[0.015] rounded-full blur-[120px] pointer-events-none"></div>
 

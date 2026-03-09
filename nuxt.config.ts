@@ -1,7 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2026-02-06',
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
@@ -102,6 +108,7 @@ export default defineNuxtConfig({
         output: {
           manualChunks: {
             'vue-vendor': ['vue', 'vue-router'],
+            'vueuse-vendor': ['@vueuse/core'],
           },
         },
       },

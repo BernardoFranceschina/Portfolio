@@ -50,6 +50,10 @@ const openProject = (project) => {
   isProjectOpen.value = true
 }
 
+const canonicalUrl = computed(() => 
+  locale.value === 'pt' ? siteUrl : `${siteUrl}en/`
+)
+
 const activeIndex = computed(() => {
   if (!activeProject.value || !projects.value) return -1
   return projects.value.findIndex(p => p.id === activeProject.value.id)
@@ -85,27 +89,30 @@ useHead({
   },
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    { rel: 'canonical', href: siteUrl }
+    { rel: 'canonical', href: canonicalUrl }
   ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'ProfilePage',
-        'mainEntity': {
-          '@type': 'Person',
-          'name': 'Bernardo Franceschina',
-          'jobTitle': 'Full Stack Developer',
-          'url': siteUrl,
-          'sameAs': [
-            'https://github.com/bernardofranceschina',
-            'https://linkedin.com/in/bernardo-franceschina'
-          ]
-        }
-      })
-    }
-  ]
+  script: [{
+    type: 'application/ld+json',
+    children: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      mainEntity: {
+        '@type': 'Person',
+        name: 'Bernardo Franceschina',
+        jobTitle: 'Full Stack Developer',
+        url: siteUrl,
+        knowsLanguage: ['pt-BR', 'en-US'],
+        alumniOf: {
+          '@type': 'CollegeOrUniversity',
+          name: 'Universidade Federal de Santa Catarina'
+        },
+        sameAs: [
+          'https://github.com/bernardofranceschina',
+          'https://linkedin.com/in/bernardo-franceschina'
+        ]
+      }
+    })
+  }]
 })
 
 useSeoMeta({

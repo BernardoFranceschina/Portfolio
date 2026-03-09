@@ -1,11 +1,9 @@
 <template>
-  <section class="bg-[#0a0a0c] relative z-10 pb-8">
+  <section class="bg-[#0a0a0c] relative z-10 pb-8" aria-labelledby="projects-heading">
     
-    <!-- Section header -->
     <div class="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 pt-16 md:pt-24 pb-14 md:pb-20">
-      
       <div v-reveal class="w-full h-[1px] bg-gradient-to-r from-white/10 via-white/5 to-transparent mb-12"></div>
-      
+
       <div v-reveal class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
           <span class="font-mono text-[11px] text-yellow-500/80 tracking-[0.3em] uppercase block mb-5">
@@ -77,7 +75,7 @@
                   <Icon name="ph:arrow-right" class="text-yellow-400 w-4 h-4" />
                 </div>
 
-                <!-- Index number — decorative -->
+                <!-- Index number -->
                 <div class="absolute top-5 right-6 font-display text-5xl md:text-6xl text-white/[0.06] font-bold group-hover:text-white/[0.12] transition-colors duration-500" aria-hidden="true">
                   0{{ index + 1 }}
                 </div>

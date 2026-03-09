@@ -47,7 +47,7 @@
       ]
     },
     {
-      "source": "/cv_bernardo_franceschina_pt-br.pdf",
+      "source": "/cv_bernardo_franceschina_pt_br.pdf",
       "headers": [
         {
           "key": "Cache-Control",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "source": "/cv_bernardo_franceschina_en-us.pdf",
+      "source": "/cv_bernardo_franceschina_en_us.pdf",
       "headers": [
         {
           "key": "Cache-Control",

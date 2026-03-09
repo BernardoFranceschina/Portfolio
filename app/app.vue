@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <div class="grain-overlay" aria-hidden="true"></div>
-    
+
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -16,30 +16,18 @@ import { SpeedInsights } from "@vercel/speed-insights/nuxt"
 </script>
 
 <style>
-@font-face {
-  font-family: 'Fraunces';
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-display: swap;
-}
-
-/* Page transitions */
 .page-enter-active,
 .page-leave-active {
   transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-  filter: blur(6px);
-  transform: translateY(12px);
+@media (max-width: 768px) {
+  .page-enter-from,
+  .page-leave-to {
+    filter: blur(2px);
+  }
 }
 
-/* Grain texture — PNG tile, GPU composited */
 .grain-overlay {
   position: fixed;
   inset: 0;
@@ -56,40 +44,34 @@ import { SpeedInsights } from "@vercel/speed-insights/nuxt"
   .grain-overlay { opacity: 0.025; }
 }
 
-/* Scroll reveal */
 .reveal-target {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal-target.revealed { opacity: 1; transform: translateY(0); }
 
 .reveal-left {
   opacity: 0;
   transform: translateX(-40px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal-left.revealed { opacity: 1; transform: translateX(0); }
 
 .reveal-right {
   opacity: 0;
   transform: translateX(40px);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal-right.revealed { opacity: 1; transform: translateX(0); }
 
 .reveal-scale {
   opacity: 0;
   transform: scale(0.95);
-  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal-scale.revealed { opacity: 1; transform: scale(1); }
 
-/* Accessibility — reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .reveal-target,
   .reveal-left,

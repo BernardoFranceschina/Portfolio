@@ -113,10 +113,11 @@ const lastScrollY = ref(0)
 const isVisible = ref(true)
 
 watch(y, (newY) => {
-  if (Math.abs(newY - lastScrollY.value) > 10) isMobileMenuOpen.value = false
-  if (newY <= 50) isVisible.value = true
-  else if (newY > lastScrollY.value) isVisible.value = false
-  else isVisible.value = true
+  const delta = newY - lastScrollY.value
+  if (Math.abs(delta) < 5) return
+  
+  isMobileMenuOpen.value = false
+  isVisible.value = newY <= 50 || delta < 0
   lastScrollY.value = newY
 })
 
@@ -141,7 +142,9 @@ const switchLanguage = async (code: any) => {
   const currentScroll = window.scrollY
   isLangMenuOpen.value = false
   await setLocale(code)
-  setTimeout(() => window.scrollTo({ top: currentScroll, behavior: 'instant' }), 50)
+  await nextTick()
+  await nextTick() // segundo tick garante que o DOM re-renderizou
+  window.scrollTo({ top: currentScroll, behavior: 'instant' })
 }
 
 const links = computed(() => [

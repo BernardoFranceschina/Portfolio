@@ -1,6 +1,6 @@
 <template>
   <Transition name="modal">
-    <div v-if="isOpen" class="fixed inset-0 z-[999] flex justify-end" ref="modalRef">
+    <div v-if="isOpen" class="fixed inset-0 z-[999] flex justify-end" ref="modalRef" role="dialog" :aria-label="project.title" aria-modal="true">
       <div class="absolute inset-0 bg-black/85 backdrop-blur-md transition-opacity" @click="close"></div>
       
       <div id="modal-content" tabindex="-1" class="relative w-full md:w-[90vw] lg:w-[80vw] 2xl:max-w-7xl h-full bg-[#0c0c0e] overflow-y-auto shadow-2xl border-l border-white/[0.06] slide-in">
@@ -22,7 +22,7 @@
           ></button>
           <button 
             v-if="prevProject" 
-            @click="$emit('navigate', prevProject)" 
+            @click="$emit('navigate', prevProject)"
             class="md:hidden flex items-center justify-center w-9 h-9 rounded-full text-gray-500 hover:text-white hover:bg-white/[0.06] transition-all"
           >
             <Icon name="ph:caret-left-bold" class="w-4 h-4" />
@@ -36,7 +36,7 @@
           <div class="flex items-center gap-1.5">
             <button 
               v-if="nextProject" 
-              @click="$emit('navigate', nextProject)" 
+              @click="$emit('navigate', nextProject)"
               class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg text-gray-500 hover:text-white hover:bg-white/[0.04] transition-all group/nav"
             >
               <span class="text-[12px] font-mono truncate max-w-[180px]">{{ nextProject.title }}</span>
@@ -57,7 +57,7 @@
         </div>
 
         <div class="h-[35vh] md:h-[50vh] relative w-full group cursor-zoom-in" @click="openZoom(project.image)">
-          <NuxtImg :src="project.image" class="w-full h-full object-cover" />
+          <NuxtImg :src="project.image" class="w-full h-full object-cover"/>
           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
             <div class="bg-black/50 backdrop-blur-md p-3 rounded-full border border-white/10">
               <Icon name="ph:magnifying-glass-plus-bold" class="text-white text-lg" />
@@ -194,7 +194,8 @@
               <div class="rounded-xl overflow-hidden border border-white/[0.06] shadow-xl">
                 <NuxtImg 
                   :src="project.second_image || project.image" 
-                  class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500" 
+                  class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                  loading="lazy"
                 />
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20 rounded-xl">
                   <Icon name="ph:arrows-out-simple-bold" class="text-white text-xl drop-shadow-md" />
@@ -353,7 +354,10 @@ const openZoom = (src: string) => { if (src) { zoomedImage.value = src; isZoomLo
 const onZoomImageLoad = () => { isZoomLoading.value = false }
 const closeZoom = () => { zoomedImage.value = null; isZoomLoading.value = false }
 
-watch(() => props.project, () => { document.getElementById('modal-content')?.scrollTo(0, 0) })
+watch(() => props.project, async () => { 
+  await nextTick()
+  document.getElementById('modal-content')?.scrollTo({ top: 0, behavior: 'instant' }) 
+})
 watch(() => props.isOpen, (v) => { document.body.style.overflow = v ? 'hidden' : '' }, { immediate: true })
 watch(() => props.isOpen, async (v) => { if (v) { await nextTick(); if (modalRef.value) activate() } else deactivate() })
 

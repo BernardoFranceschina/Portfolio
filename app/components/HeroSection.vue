@@ -86,11 +86,13 @@
             <div class="relative aspect-[4/5] rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl shadow-black/50 group">
               <NuxtImg 
                 src="/bernardo.png" 
-                alt="Bernardo Franceschina — Full Stack Developer" 
+                :alt="t('hero.photo_alt')"
                 class="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-700"
                 fetchpriority="high"
                 format="webp"
                 preload
+                width="360"
+                height="450"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
             </div>

@@ -3,7 +3,7 @@ import { onUnmounted } from 'vue'
 export function useScrollReveal(options = {}) {
   const {
     threshold = 0.15,
-    rootMargin = '0px 0px -60px 0px',
+    rootMargin = '0px 0px -40px 0px',
     once = true
   } = options
 
