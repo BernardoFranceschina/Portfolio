@@ -9,8 +9,10 @@ second_image: "/psico/psico_dev.png"
 color: "bg-[#0B1B0C]"
 tags: ["Laravel", "Vue.js", "Pinia", "Vuetify", "MySQL", "Docker", "JWT"]
 year: "2026"
-company: "Freelance"
+company: "Aya Psique"
 role: "Full Stack Developer"
+live_url: "https://ayapsique.com.br"
+work_context: "client"
 features:
   - "Dashboard com métricas, KPIs, sparklines de faturamento e lista de aniversariantes"
   - "Calendário de sessões com múltiplas visualizações e controle de status"

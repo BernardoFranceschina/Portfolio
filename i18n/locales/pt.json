@@ -9,7 +9,7 @@
     "tagline": "Full Stack Developer",
     "title": "Construo sistemas que {highlight} do início ao fim.",
     "title_highlight": "funcionam",
-    "subtitle": "5+ anos entregando plataformas completas - de telemetria automotiva a SaaS. Entregando o detalhe que o usuário sente mas não vê.",
+    "subtitle": "5+ anos entregando plataformas completas — de telemetria automotiva a SaaS. Onde cada detalhe importa, mesmo os que o usuário não vê.",
     "cta": "Ver projetos",
     "scroll_hint": "scroll"
   },
@@ -18,8 +18,8 @@
     "heading": "Bernardo {highlight}",
     "heading_highlight": "Franceschina",
     "bio_1": "Desenvolvedor full stack de Florianópolis, graduando em Ciências da Computação pela UFSC. Comecei em uma software house construindo ERPs e sistemas multi-tenant, evoluí para freelance entregando plataformas de ponta a ponta, e hoje contribuo em pesquisa aplicada no LISHA/UFSC em parceria com a Renault.",
-    "bio_2": "Meu diferencial é ter {highlight}: dominar o backend com a mesma profundidade que o frontend. Desenho a arquitetura, implemento a API, construo a interface e configuro o deploy. Cada projeto aqui reflete essa visão completa.",
-    "bio_highlight": "visão full stack real",
+    "bio_2": "Eu transito entre backend e frontend com a mesma fluência — {highlight}. Desenho a arquitetura, implemento a API, construo a interface e configuro o deploy. Cada projeto aqui reflete essa visão completa.",
+    "bio_highlight": "da arquitetura da API ao pixel na interface",
     "stats": {
       "experience": "5+",
       "experience_label": "anos de experiência",
@@ -47,6 +47,18 @@
       }
     }
   },
+  "stack": {
+    "label": "// Ferramentas",
+    "heading": "Stack",
+    "heading_highlight": "técnica",
+    "description": "Tecnologias que uso no dia a dia para entregar projetos completos — do banco de dados ao deploy.",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "infra": "Infra & DevOps",
+      "databases": "Bancos de dados"
+    }
+  },
   "intro": {
     "marquee": "PROJETAR • CONSTRUIR • ENTREGAR • ITERAR •",
     "label": "// Portfólio",
@@ -63,6 +75,8 @@
     "section_title": "Projetos",
     "section_subtitle": "Selecionados",
     "view_case": "Ver estudo de caso",
+    "visit_site": "Visitar site",
+    "internal_project": "Projeto interno",
     "modal": {
       "challenge": "O desafio",
       "stack": "Stack técnica",
@@ -71,8 +85,10 @@
       "result": "O resultado",
       "development": "A solução",
       "year": "Ano",
-      "company": "Empresa",
+      "company_employer": "Empresa",
+      "company_client": "Cliente",
       "role_label": "Papel",
+      "freelance": "Freelance",
       "status": "Status",
       "online": "Em Produção"
     }
@@ -88,7 +104,7 @@
     "source_code": "Código deste site",
     "main_email": "Email principal",
     "copied": "Copiado!",
-    "download_cv": "Baixar Currículo",
+    "download_cv": "Acessar currículo",
     "cv_link": "/cv_bernardo_franceschina_pt_br.pdf",
     "rights": "Todos os direitos reservados.",
     "location": "Florianópolis, Brasil",

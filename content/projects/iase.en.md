@@ -11,6 +11,8 @@ tags: ["Docker", "Nginx", "Vue.js", "Django", "MQTT", "CI/CD", "Chart.js", "Leaf
 year: "2024 - Present"
 company: "UFSC / Renault / Horse"
 role: "Frontend lead & DevOps"
+live_url: ""
+work_context: "employer"
 features:
   - "Reactive dashboards with Chart.js for real-time sensor data visualization"
   - "Interactive maps with Leaflet for GPS tracking of vehicle fleets"

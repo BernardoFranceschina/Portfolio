@@ -48,7 +48,6 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
   },
 
-  // FONT CONFIG — no providers override, just defaults
   fonts: {
     defaults: {
       weights: [300, 400, 700],

@@ -9,8 +9,10 @@ second_image: "/iase/iase_dev.png"
 color: "bg-[#674E0B]"
 tags: ["Docker", "Nginx", "Vue.js", "Django", "MQTT", "CI/CD", "Chart.js", "Leaflet"]
 year: "2024 - Atual"
-company: "UFSC / Renault / Horse"
+company: "LISHA/UFSC"
 role: "Frontend Lead & DevOps"
+live_url: ""
+work_context: "employer"
 features:
   - "Dashboards reativos com Chart.js para visualização de dados de sensores em tempo real"
   - "Mapas interativos com Leaflet para rastreamento GPS de frotas de veículos"

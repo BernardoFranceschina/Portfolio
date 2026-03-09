@@ -19,6 +19,8 @@ export default defineContentConfig({
         company: z.string(),
         category: z.string(),
         role: z.string().default('Full Stack Developer'),
+        live_url: z.string().default(''),
+        work_context: z.enum(['employer', 'client']).default('client'),
         features: z.array(z.string()).default([]),
         highlights: z.array(z.string()).default([]),
         

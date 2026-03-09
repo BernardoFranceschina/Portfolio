@@ -95,11 +95,11 @@
           <!-- CV Download -->
           <a 
             :href="t('footer.cv_link')" 
-            download
+            target="_blank"
             class="group inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-white/[0.08] bg-white/[0.02] hover:border-yellow-500/30 hover:bg-yellow-500/[0.05] transition-all duration-300 w-full"
           >
             <div class="w-8 h-8 rounded-lg bg-yellow-500/10 flex items-center justify-center shrink-0">
-              <Icon name="ph:file-arrow-down" class="w-4 h-4 text-yellow-500" />
+              <Icon name="ph:file-pdf" class="w-4 h-4 text-yellow-500" />
             </div>
             <div class="flex flex-col min-w-0">
               <span class="text-sm text-white group-hover:text-yellow-400 transition-colors font-medium">
@@ -107,7 +107,7 @@
               </span>
               <span class="text-[10px] font-mono text-gray-400 tracking-wider uppercase">PDF</span>
             </div>
-            <Icon name="ph:download-simple" class="w-4 h-4 text-gray-400 group-hover:text-yellow-500 transition-colors ml-auto shrink-0" />
+            <Icon name="ph:arrow-up-right" class="w-4 h-4 text-gray-400 group-hover:text-yellow-500 transition-colors ml-auto shrink-0" />
           </a>
         </div>
       </div>

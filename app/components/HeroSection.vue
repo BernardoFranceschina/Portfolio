@@ -30,7 +30,7 @@
             :class="{ 'hero-visible': isLoaded }"
             :style="{ '--delay': '0.4s' }"
           >
-            <i18n-t keypath="hero.title" tag="span" scope="global" class="block text-[clamp(2.5rem,6vw,5.5rem)] font-display font-light leading-[1.05] tracking-[-0.02em]">
+            <i18n-t keypath="hero.title" tag="span" scope="global" class="block text-[clamp(2.5rem,6vw,5.5rem)] 2xl:text-[6rem] font-display font-light leading-[1.05] tracking-[-0.02em]">
               <template #highlight>
                 <span class="relative inline-block">
                   <span class="absolute -inset-x-2 inset-y-0 bg-yellow-400/90 -rotate-1 skew-x-2 rounded-[3px] origin-left" :class="isLoaded ? 'animate-highlight' : 'scale-x-0'"></span>
@@ -43,7 +43,7 @@
           </h1>
 
           <p 
-            class="text-[15px] md:text-lg text-gray-400 max-w-xl leading-[1.7] font-light mb-10 hero-text"
+            class="text-[15px] md:text-lg lg:text-xl 2xl:text-[22px] text-gray-400 max-w-xl lg:max-w-2xl leading-[1.7] font-light mb-10 hero-text"
             :class="{ 'hero-visible': isLoaded }"
             :style="{ '--delay': '0.6s' }"
           >
@@ -104,9 +104,8 @@
 
             <!-- Name badge at bottom -->
             <div class="absolute -bottom-4 left-4 right-4 z-30">
-              <div class="bg-[#111113] border border-white/10 px-4 py-2.5 rounded-xl shadow-xl flex items-center justify-between">
+              <div class="bg-[#111113] border border-white/10 px-4 py-2.5 rounded-xl shadow-xl flex items-center justify-center">
                 <span class="font-mono text-[11px] text-white tracking-wide">Bernardo Franceschina</span>
-                <span class="font-mono text-[10px] text-yellow-500 tracking-wider">UFSC</span>
               </div>
             </div>
           </div>
@@ -114,24 +113,29 @@
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div 
-      class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 hero-text"
-      :class="{ 'hero-visible': isLoaded }"
-      :style="{ '--delay': '1.2s' }"
-    >
-      <span class="font-mono text-[10px] text-gray-400 tracking-[0.3em] uppercase">{{ t('hero.scroll_hint') }}</span>
-      <div class="w-[1px] h-8 bg-gradient-to-b from-white/20 to-transparent animate-pulse"></div>
-    </div>
+    <Transition name="fade-scroll">
+      <div 
+        v-show="showScrollHint"
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 hero-text"
+        :class="{ 'hero-visible': isLoaded }"
+        :style="{ '--delay': '1.2s' }"
+      >
+        <span class="font-mono text-[10px] text-gray-400 tracking-[0.3em] uppercase">{{ t('hero.scroll_hint') }}</span>
+        <div class="w-[1px] h-8 bg-gradient-to-b from-white/20 to-transparent animate-pulse"></div>
+      </div>
+    </Transition>
   </section>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useWindowScroll } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n({ useScope: 'global' })
 const isLoaded = ref(false)
+const { y } = useWindowScroll()
+const showScrollHint = computed(() => y.value < 100)
 
 onMounted(() => {
   requestAnimationFrame(() => { isLoaded.value = true })
@@ -168,5 +172,14 @@ const scrollToSection = (href: string) => {
   animation: highlight-grow 0.7s cubic-bezier(0.65, 0, 0.35, 1) forwards 0.9s;
   transform: scaleX(0);
   transform-origin: left;
+}
+
+.fade-scroll-enter-active,
+.fade-scroll-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-scroll-enter-from,
+.fade-scroll-leave-to {
+  opacity: 0;
 }
 </style>

@@ -3,39 +3,59 @@
     <div v-if="isOpen" class="fixed inset-0 z-[999] flex justify-end" ref="modalRef">
       <div class="absolute inset-0 bg-black/85 backdrop-blur-md transition-opacity" @click="close"></div>
       
-      <!-- Nav arrows -->
-      <div class="fixed top-1/2 -translate-y-1/2 left-4 z-[1002] hidden xl:block" v-if="prevProject">
-        <button @click="$emit('navigate', prevProject)" class="bg-white/5 hover:bg-yellow-500 hover:text-black text-white p-3.5 rounded-full backdrop-blur-md border border-white/10 transition-all duration-300 group">
-          <Icon name="ph:caret-left-bold" class="text-xl" />
-          <span class="absolute left-full ml-3 top-1/2 -translate-y-1/2 bg-[#111] px-3 py-1.5 rounded-lg text-[11px] font-mono tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 text-white pointer-events-none">{{ prevProject.title }}</span>
-        </button>
-      </div>
-      <div class="fixed top-1/2 -translate-y-1/2 right-4 lg:right-[calc(80vw+1rem)] 2xl:right-[calc(1280px+1rem)] z-[1002] hidden xl:block" v-if="nextProject">
-        <button @click="$emit('navigate', nextProject)" class="bg-white/5 hover:bg-yellow-500 hover:text-black text-white p-3.5 rounded-full backdrop-blur-md border border-white/10 transition-all duration-300 group">
-          <Icon name="ph:caret-right-bold" class="text-xl" />
-          <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-[#111] px-3 py-1.5 rounded-lg text-[11px] font-mono tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 text-white pointer-events-none">{{ nextProject.title }}</span>
-        </button>
-      </div>
-
-      <!-- Modal body -->
       <div id="modal-content" tabindex="-1" class="relative w-full md:w-[90vw] lg:w-[80vw] 2xl:max-w-7xl h-full bg-[#0c0c0e] overflow-y-auto shadow-2xl border-l border-white/[0.06] slide-in">
         
-        <!-- Mobile nav -->
-        <div class="absolute top-6 left-6 flex gap-3 md:hidden z-50">
-          <button v-if="prevProject" @click="$emit('navigate', prevProject)" class="bg-black/40 hover:bg-white/10 text-white w-10 h-10 rounded-full flex items-center justify-center border border-white/10 transition-colors backdrop-blur-sm">
-            <Icon name="ph:caret-left-bold" />
+        <div class="sticky top-0 z-50 flex items-center justify-between px-4 md:px-6 py-3 bg-[#0c0c0e]/90 backdrop-blur-xl border-b border-white/[0.04]">
+          
+          <button 
+            v-if="prevProject" 
+            @click="$emit('navigate', prevProject)" 
+            class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg text-gray-500 hover:text-white hover:bg-white/[0.04] transition-all group/nav"
+          >
+            <Icon name="ph:caret-left-bold" class="w-3.5 h-3.5" />
+            <span class="text-[12px] font-mono truncate max-w-[180px]">{{ prevProject.title }}</span>
           </button>
-          <button v-if="nextProject" @click="$emit('navigate', nextProject)" class="bg-black/40 hover:bg-white/10 text-white w-10 h-10 rounded-full flex items-center justify-center border border-white/10 transition-colors backdrop-blur-sm">
-            <Icon name="ph:caret-right-bold" />
+          <button 
+            v-else-if="!prevProject && nextProject" 
+            class="hidden md:block w-8"
+            disabled
+          ></button>
+          <button 
+            v-if="prevProject" 
+            @click="$emit('navigate', prevProject)" 
+            class="md:hidden flex items-center justify-center w-9 h-9 rounded-full text-gray-500 hover:text-white hover:bg-white/[0.06] transition-all"
+          >
+            <Icon name="ph:caret-left-bold" class="w-4 h-4" />
           </button>
+          <div v-else class="w-9 md:w-8"></div>
+
+          <span class="font-mono text-[10px] text-gray-500 tracking-[0.2em] uppercase hidden sm:block">
+            {{ project.category }}
+          </span>
+
+          <div class="flex items-center gap-1.5">
+            <button 
+              v-if="nextProject" 
+              @click="$emit('navigate', nextProject)" 
+              class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg text-gray-500 hover:text-white hover:bg-white/[0.04] transition-all group/nav"
+            >
+              <span class="text-[12px] font-mono truncate max-w-[180px]">{{ nextProject.title }}</span>
+              <Icon name="ph:caret-right-bold" class="w-3.5 h-3.5" />
+            </button>
+            <button 
+              v-if="nextProject" 
+              @click="$emit('navigate', nextProject)" 
+              class="md:hidden flex items-center justify-center w-9 h-9 rounded-full text-gray-500 hover:text-white hover:bg-white/[0.06] transition-all"
+            >
+              <Icon name="ph:caret-right-bold" class="w-4 h-4" />
+            </button>
+            
+            <button @click="close" class="w-9 h-9 rounded-full flex items-center justify-center bg-white/[0.04] hover:bg-white border border-white/[0.06] hover:text-black text-gray-400 hover:border-white transition-all duration-300 ml-1 group">
+              <Icon name="ph:x-bold" class="text-sm group-hover:rotate-90 transition-transform duration-300" />
+            </button>
+          </div>
         </div>
 
-        <!-- Close -->
-        <button @click="close" class="fixed top-6 right-6 md:top-8 md:right-8 z-50 bg-black/40 hover:bg-white border border-white/10 hover:text-black text-white backdrop-blur-md w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg group">
-          <Icon name="ph:x-bold" class="text-base group-hover:rotate-90 transition-transform duration-300" />
-        </button>
-
-        <!-- ===== COVER ===== -->
         <div class="h-[35vh] md:h-[50vh] relative w-full group cursor-zoom-in" @click="openZoom(project.image)">
           <NuxtImg :src="project.image" class="w-full h-full object-cover" />
           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
@@ -55,28 +75,65 @@
           </div>
         </div>
 
-        <!-- ===== INFO BAR ===== -->
         <div class="border-b border-white/[0.06] bg-[#0c0c0e]">
-          <div class="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 py-5 flex flex-wrap items-center gap-x-8 gap-y-3 text-[11px] font-mono tracking-[0.15em] uppercase">
-            <div class="flex items-center gap-2">
-              <span class="text-gray-400">{{ t('projects.modal.year') }}</span>
-              <span class="text-white">{{ project.year }}</span>
+          <div class="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 py-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              
+              <!-- Year -->
+              <div class="flex flex-col gap-1.5">
+                <span class="text-[10px] font-mono text-gray-500 uppercase tracking-[0.2em]">
+                  {{ t('projects.modal.year') }}
+                </span>
+                <span class="text-sm text-white font-medium">{{ project.year }}</span>
+              </div>
+
+              <!-- Company / Client -->
+              <div class="flex flex-col gap-1.5">
+                <span class="text-[10px] font-mono text-gray-500 uppercase tracking-[0.2em]">
+                  {{ project.work_context === 'client' ? t('projects.modal.company_client') : t('projects.modal.company_employer') }}
+                </span>
+                <div class="flex items-center gap-2">
+                  <span class="text-sm text-white font-medium">{{ project.company }}</span>
+                  <span 
+                    v-if="project.work_context === 'client'" 
+                    class="text-[9px] font-mono uppercase tracking-[0.15em] text-yellow-500 bg-yellow-500/10 px-2 py-0.5 rounded-full border border-yellow-500/20"
+                  >
+                    {{ t('projects.modal.freelance') }}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Role -->
+              <div class="flex flex-col gap-1.5">
+                <span class="text-[10px] font-mono text-gray-500 uppercase tracking-[0.2em]">
+                  {{ t('projects.modal.role_label') }}
+                </span>
+                <span class="text-sm text-white font-medium">{{ project.role }}</span>
+              </div>
+
+              <!-- Status -->
+              <div class="flex flex-col gap-1.5">
+                <span class="text-[10px] font-mono text-gray-500 uppercase tracking-[0.2em]">
+                  {{ t('projects.modal.status') }}
+                </span>
+                <span class="flex items-center gap-1.5 text-sm">
+                  <span class="w-1.5 h-1.5 bg-green-500 rounded-full shrink-0"></span>
+                  <span class="text-green-400 font-medium">{{ t('projects.modal.online') }}</span>
+                </span>
+              </div>
             </div>
-            <span class="w-[1px] h-4 bg-white/[0.06] hidden sm:block"></span>
-            <div class="flex items-center gap-2">
-              <span class="text-gray-400">{{ t('projects.modal.company') }}</span>
-              <span class="text-white">{{ project.company }}</span>
-            </div>
-            <span class="w-[1px] h-4 bg-white/[0.06] hidden sm:block"></span>
-            <div class="flex items-center gap-2">
-              <span class="text-gray-400">{{ t('projects.modal.role_label') }}</span>
-              <span class="text-white">{{ project.role }}</span>
-            </div>
-            <span class="w-[1px] h-4 bg-white/[0.06] hidden sm:block"></span>
-            <div class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-              <span class="text-green-500">{{ t('projects.modal.online') }}</span>
-            </div>
+
+            <a 
+              v-if="project.live_url"
+              :href="project.live_url" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="mt-5 inline-flex items-center gap-2 px-4 py-2 bg-white/[0.04] border border-white/[0.08] hover:border-yellow-500/30 hover:bg-yellow-500/[0.06] rounded-lg transition-all duration-300 group/link"
+            >
+              <Icon name="ph:globe" class="w-4 h-4 text-yellow-500" />
+              <span class="text-[13px] text-gray-300 group-hover/link:text-white transition-colors font-medium">{{ project.live_url.replace('https://', '') }}</span>
+              <Icon name="ph:arrow-up-right-bold" class="w-3 h-3 text-gray-500 group-hover/link:text-yellow-500 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all" />
+            </a>
           </div>
         </div>
 
@@ -146,28 +203,35 @@
             </div>
           </div>
 
-          <!-- TECH STACK + HIGHLIGHTS -->
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            <!-- Stack -->
-            <div class="lg:col-span-4">
-              <h3 class="text-xs font-mono uppercase text-yellow-500/70 tracking-[0.25em] mb-5">
+            
+            <div class="lg:col-span-5">
+              <h3 class="text-xs font-mono uppercase text-yellow-500/70 tracking-[0.25em] mb-5 flex items-center gap-3">
                 {{ t('projects.modal.stack') }}
+                <span class="h-[1px] flex-1 bg-white/[0.06]"></span>
               </h3>
-              <div class="flex flex-wrap gap-2">
-                <span 
-                  v-for="tag in project.tags" 
+              <div class="grid grid-cols-2 gap-2">
+                <div
+                  v-for="tag in project.tags"
                   :key="tag"
-                  class="text-[12px] font-mono text-gray-400 bg-white/[0.03] border border-white/[0.06] px-3 py-1.5 rounded-lg"
+                  class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white/[0.02] border border-white/[0.04] hover:border-white/10 transition-colors group/tech"
                 >
-                  {{ tag }}
-                </span>
+                  <Icon 
+                    :name="getTagIcon(tag)" 
+                    class="w-4 h-4 shrink-0 text-gray-300 opacity-70 group-hover/tech:opacity-100 transition-opacity" 
+                  />
+                  <span class="text-[12px] font-mono text-gray-400 group-hover/tech:text-gray-300 transition-colors truncate">
+                    {{ tag }}
+                  </span>
+                </div>
               </div>
             </div>
 
             <!-- Highlights -->
-            <div class="lg:col-span-8" v-if="project.highlights && project.highlights.length">
-              <h3 class="text-xs font-mono uppercase text-yellow-500/70 tracking-[0.25em] mb-5">
+            <div class="lg:col-span-7" v-if="project.highlights && project.highlights.length">
+              <h3 class="text-xs font-mono uppercase text-yellow-500/70 tracking-[0.25em] mb-5 flex items-center gap-3">
                 {{ t('projects.modal.highlights') }}
+                <span class="h-[1px] flex-1 bg-white/[0.06]"></span>
               </h3>
               <div class="space-y-3">
                 <div 
@@ -190,6 +254,17 @@
             <p class="text-base md:text-lg text-gray-200 leading-[1.8] font-light">
               {{ project.result_text }}
             </p>
+
+            <a 
+              v-if="project.live_url"
+              :href="project.live_url" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2.5 mt-6 px-5 py-2.5 bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 hover:bg-yellow-500 hover:text-black rounded-full text-sm font-medium transition-all duration-300 group/cta"
+            >
+              <span>{{ t('projects.visit_site') }}</span>
+              <Icon name="ph:arrow-up-right-bold" class="w-4 h-4 group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5 transition-transform" />
+            </a>
           </div>
 
         </div>
@@ -237,6 +312,42 @@ const { activate, deactivate } = useFocusTrap(modalRef, {
 })
 
 onKeyStroke('Escape', () => { if (props.isOpen) emit('close') })
+onKeyStroke('ArrowLeft', () => {
+  if (props.isOpen && props.prevProject) emit('navigate', props.prevProject)
+})
+onKeyStroke('ArrowRight', () => {
+  if (props.isOpen && props.nextProject) emit('navigate', props.nextProject)
+})
+
+// Tech icon mapping — uses simple-icons (monochrome, inherits text color) for dark logos
+const techIconMap: Record<string, string> = {
+  'Laravel': 'logos:laravel',
+  'Vue.js': 'logos:vue',
+  'Nuxt 3': 'logos:nuxt-icon',
+  'Docker': 'logos:docker-icon',
+  'Nginx': 'simple-icons:nginx',
+  'Django': 'simple-icons:django',
+  'MQTT': 'ph:wifi-high-bold',
+  'CI/CD': 'ph:git-branch-bold',
+  'Chart.js': 'simple-icons:chartdotjs',
+  'Leaflet': 'simple-icons:leaflet',
+  'Sanity.io': 'simple-icons:sanity',
+  'Asaas': 'ph:credit-card-bold',
+  'JWT': 'ph:key-bold',
+  'AWS S3': 'simple-icons:amazonaws',
+  'AWS': 'simple-icons:amazonaws',
+  'Pinia': 'logos:pinia',
+  'Vuetify': 'logos:vuetifyjs',
+  'MySQL': 'simple-icons:mysql',
+  'PostgreSQL': 'logos:postgresql',
+  'WebSocket': 'ph:plugs-connected-bold',
+  'TypeScript': 'logos:typescript-icon',
+  'Tailwind CSS': 'logos:tailwindcss-icon',
+}
+
+const getTagIcon = (tag: string): string => {
+  return techIconMap[tag] || 'ph:code-bold'
+}
 
 const openZoom = (src: string) => { if (src) { zoomedImage.value = src; isZoomLoading.value = true } }
 const onZoomImageLoad = () => { isZoomLoading.value = false }

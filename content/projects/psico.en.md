@@ -11,6 +11,8 @@ tags: ["Laravel", "Vue.js", "Pinia", "Vuetify", "MySQL", "Docker", "JWT"]
 year: "2026"
 company: "Freelance"
 role: "Full stack developer"
+live_url: "https://ayapsique.com.br"
+work_context: "client"
 features:
   - "Dashboard with metrics, KPIs, revenue sparklines, and birthday list"
   - "Session calendar with multiple views and status control"

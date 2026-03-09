@@ -67,7 +67,7 @@
                   format="webp"
                   loading="lazy"
                   densities="x1 x2"
-                  class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-700 ease-out"
+                  class="w-full h-full object-cover grayscale-[30%] opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-700 ease-out"
                 />
                 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -77,7 +77,7 @@
                   <Icon name="ph:arrow-right" class="text-yellow-400 w-4 h-4" />
                 </div>
 
-                <!-- Index number — decorative, no contrast requirement -->
+                <!-- Index number — decorative -->
                 <div class="absolute top-5 right-6 font-display text-5xl md:text-6xl text-white/[0.06] font-bold group-hover:text-white/[0.12] transition-colors duration-500" aria-hidden="true">
                   0{{ index + 1 }}
                 </div>
@@ -117,10 +117,22 @@
                 </span>
               </div>
 
-              <!-- Company — improved readability -->
+              <!-- Company with context -->
               <div class="flex items-center gap-2.5 text-[12px] font-mono text-gray-400 tracking-wider">
-                <Icon name="ph:buildings" class="w-4 h-4 text-gray-500" />
+                <Icon 
+                  :name="project.work_context === 'client' ? 'ph:user' : 'ph:buildings'" 
+                  class="w-4 h-4 text-gray-500" 
+                />
+                <span class="text-gray-500">
+                  {{ project.work_context === 'client' ? t('projects.modal.company_client') : t('projects.modal.company_employer') }}:
+                </span>
                 <span>{{ project.company }}</span>
+                <span 
+                  v-if="project.work_context === 'client'" 
+                  class="text-[9px] uppercase tracking-[0.1em] text-yellow-500 bg-yellow-500/10 px-1.5 py-0.5 rounded-full border border-yellow-500/20 leading-none"
+                >
+                  {{ t('projects.modal.freelance') }}
+                </span>
               </div>
             </div>
           </div>

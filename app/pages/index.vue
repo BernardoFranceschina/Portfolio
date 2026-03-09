@@ -12,6 +12,8 @@
         <AboutSection />
       </div>
 
+      <TechStackSection />
+
       <div id="projects">
         <ProjectsSection @open-project="openProject" />
       </div>

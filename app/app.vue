@@ -43,7 +43,7 @@ import { SpeedInsights } from "@vercel/speed-insights/nuxt"
 .grain-overlay {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 50;
   pointer-events: none;
   opacity: 0.04;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAElBMVEUAAAAAAAAAAAAAAAAAAAAAAADgKxmiAAAABnRSTlMFCA0RFhst1VwSAAAAX0lEQVQ4y2MYJoAJSjMxoNJMUJqZAZVmgdKsDKg0G5RmZ0ClOaA0JwMqzQWluRlQaR4ozQOl+RhQaX4oLcCASgtCaSEGVFoYSoswoNKiUFqMAZUWh9ISDKj0MAQA8F8HGf7KMVIAAAAASUVORK5CYII=");

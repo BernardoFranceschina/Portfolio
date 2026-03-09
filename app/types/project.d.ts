@@ -14,6 +14,8 @@ export interface Project {
   company: string;
   category: string;
   role: string;
+  live_url: string;
+  work_context: 'employer' | 'client';
   features: string[];
   highlights: string[];
   

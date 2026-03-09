@@ -7,9 +7,9 @@
   },
   "hero": {
     "tagline": "Full stack developer",
-    "title": "I build systems that {highlight} from start to finish.",
-    "title_highlight": "work",
-    "subtitle": "5+ years delivering complete platforms - from automotive telemetry to SaaS. Delivering the detail the user feels but doesn't see.",
+    "title": "I ship systems that {highlight} end to end.",
+    "title_highlight": "hold up",
+    "subtitle": "5+ years delivering complete platforms — from automotive telemetry to SaaS. Where every detail matters, even the ones the user doesn't see.",
     "cta": "View projects",
     "scroll_hint": "scroll"
   },
@@ -18,8 +18,8 @@
     "heading": "Bernardo {highlight}",
     "heading_highlight": "Franceschina",
     "bio_1": "Full stack developer from Florianópolis, pursuing a degree in Computer Science at UFSC. I started in a software house building ERPs and multi-tenant systems, evolved to freelance delivering end-to-end platforms, and today I contribute to applied research at LISHA/UFSC in partnership with Renault.",
-    "bio_2": "My competitive advantage is having a {highlight}: mastering the backend with the same depth as the frontend. I design the architecture, implement the API, build the interface, and configure the deployment. Every project here reflects this complete vision.",
-    "bio_highlight": "real full stack vision",
+    "bio_2": "I move between backend and frontend with the same fluency — {highlight}. I design the architecture, implement the API, build the interface, and configure the deployment. Every project here reflects this complete vision.",
+    "bio_highlight": "from the API architecture to the pixel on screen",
     "stats": {
       "experience": "5+",
       "experience_label": "years of experience",
@@ -47,6 +47,18 @@
       }
     }
   },
+  "stack": {
+    "label": "// Tools",
+    "heading": "Tech",
+    "heading_highlight": "stack",
+    "description": "Technologies I use daily to deliver complete projects — from database to deployment.",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "infra": "Infra & DevOps",
+      "databases": "Databases"
+    }
+  },
   "intro": {
     "marquee": "Design • build • deliver • iterate •",
     "label": "// Portfolio",
@@ -63,6 +75,8 @@
     "section_title": "Projects",
     "section_subtitle": "Selected",
     "view_case": "View case study",
+    "visit_site": "Visit site",
+    "internal_project": "Internal project",
     "modal": {
       "challenge": "The challenge",
       "stack": "Tech stack",
@@ -71,8 +85,10 @@
       "result": "The result",
       "development": "The solution",
       "year": "Year",
-      "company": "Company",
+      "company_employer": "Working at",
+      "company_client": "Contracting company",
       "role_label": "Role",
+      "freelance": "Freelance",
       "status": "Status",
       "online": "In production"
     }
@@ -88,7 +104,7 @@
     "source_code": "Source code for this site",
     "main_email": "Main email",
     "copied": "Copied!",
-    "download_cv": "Download resume",
+    "download_cv": "View resume",
     "cv_link": "/cv_bernardo_franceschina_en_us.pdf",
     "rights": "All rights reserved.",
     "location": "Florianópolis, Brazil",

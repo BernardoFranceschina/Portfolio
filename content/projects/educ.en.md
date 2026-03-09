@@ -9,8 +9,10 @@ second_image: "/ndpz/ndpz_dev.png"
 color: "bg-[#9F3623]"
 tags: ["Laravel", "Vue.js", "Nuxt 3", "Sanity.io", "Asaas", "JWT", "AWS S3"]
 year: "2022 - 2026"
-company: "Freelance"
+company: "DalPiaz"
 role: "Full stack developer"
+live_url: "https://dalpiaz.com.br"
+work_context: "client"
 features:
   - "Complete e-commerce with online course sales and tickets for in-person events"
   - "Discount coupon system (fixed and percentage) with configurable installments"
