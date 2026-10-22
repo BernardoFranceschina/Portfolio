@@ -149,6 +149,10 @@ onMounted(() => {
   const userInput = () => { restoring = false }
 
   const prose = () => [...document.querySelectorAll('.notebook, .index-card, .reading-col, .cad-in')]
+  // celular: não sobra margem ao lado dos papéis; em cima de um deles ele se abaixa e só espia
+  const narrow = matchMedia('(max-width: 700px)')
+  const PAPER = '.scrap, .notebook, .index-card, .rec-root, .extra, .cad-in, .sug, .postit, .postcard, .reading-col'
+  let peekAt = 0
   const overProse = () => prose().some(p => { const r = p.getBoundingClientRect(); return r.top < innerHeight * .6 && r.bottom > innerHeight * .4 })
 
   /** devolve true se ele estava dormindo (aí acordar já é a reação) */
@@ -289,6 +293,13 @@ onMounted(() => {
     put(armB, `rotate(${(20 * amp * sw).toFixed(2)}deg)`)
     put(body, walking ? `translateY(${(-2 * amp * Math.abs(sw)).toFixed(2)}px)` : '')
     put(W, `translateX(${x.toFixed(2)}px)`)
+    // falando (ou tocado, que faz ele falar) ele levanta; a cada 150 ms basta
+    if (now - peekAt > 150) {
+      peekAt = now
+      const over = narrow.matches && !bubble.value?.classList.contains('on')
+        && document.elementsFromPoint(x + 29, innerHeight - 30).some(e => e.closest(PAPER))
+      W.classList.toggle('peek', over)
+    }
 
     // balão: centrado na cabeça, mas empurrado para dentro quando ele está perto da borda da tela
     if (bubbleW && bubble.value?.classList.contains('on')) {
@@ -684,6 +695,11 @@ onMounted(() => {
 .walker.sleep .zzz { animation: walker-z 2.4s infinite; }
 @keyframes walker-z { 0% { opacity: 0; transform: translate(0,0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translate(14px,-26px); } }
 
+/* celular: um pouco menor e, em cima de um papel, abaixado até a cabeça (o texto fica livre) */
+@media (max-width: 700px) {
+  .walker { scale: .8; transform-origin: 0 100%; transition: translate .35s cubic-bezier(.4,0,.3,1); }
+  .walker.peek { translate: 0 74px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .walker *, .walker .av { animation: none !important; transition: none !important; }
 }

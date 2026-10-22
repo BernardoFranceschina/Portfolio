@@ -37,8 +37,9 @@ function swing(i: number) {
 let down: { x: number, s: number } | null = null
 let moved = false, lastX = 0
 let settle: ReturnType<typeof setTimeout> | undefined
+// no toque o próprio navegador rola o varal (com inércia); o arrasto daqui é só para o mouse
 function onDown(e: PointerEvent) {
-  if (e.button !== 0) return
+  if (e.button !== 0 || e.pointerType !== 'mouse') return
   e.preventDefault()
   down = { x: e.clientX, s: track.value!.scrollLeft }
   moved = false
@@ -130,7 +131,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <span class="tip">← arrasta o varal - clica em uma foto</span>
+    <span class="tip">← arrasta o varal - <span class="tip-mouse">clica</span><span class="tip-touch">toca</span> em uma foto</span>
 
     <!-- etiqueta: de quem são as fotos, e a câmera no (i) -->
     <div class="varal-tag">
@@ -169,7 +170,7 @@ onMounted(() => {
 
 <style>
 .varal { position: relative; height: 350px; margin: 34vh 0 30vh; transform: rotate(-2.2deg); scroll-margin-top: 120px; }
-.varal .track { position: absolute; inset: 0 -40px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; cursor: grab; user-select: none; -webkit-user-select: none; touch-action: pan-y; }
+.varal .track { position: absolute; inset: 0 -40px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; cursor: grab; user-select: none; -webkit-user-select: none; touch-action: pan-x pan-y; }
 .varal .track::-webkit-scrollbar { display: none; }
 .varal .track.dragging { cursor: grabbing; }
 .varal .line { position: relative; height: 100%; }
@@ -207,7 +208,16 @@ onMounted(() => {
 @media (max-width: 700px) {
   .varal { height: 290px; }
   .hang { width: 160px; }
-  .varal .tip { top: 250px; }
+  .varal .tip { top: 250px; right: 16px; font-size: 23px; text-wrap: balance; }
   .varal-tag { left: 16px; top: -80px; }
+  /* o bilhete da câmera abre a partir da etiqueta (do (i), no fim dela, sairia da tela) */
+  .varal-tag .info { position: static; }
+  .varal-tag .info-below-left .info-note { left: 0; }
+  .varal-tag .info-below-left .info-note::after { left: auto; right: 26px; }
+}
+.varal .tip-touch { display: none; }
+@media (hover: none) {
+  .varal .tip-mouse { display: none; }
+  .varal .tip-touch { display: inline; }
 }
 </style>

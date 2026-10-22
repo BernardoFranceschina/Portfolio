@@ -89,4 +89,8 @@ const go = (to: string) => clearError({ redirect: to })
   .err { flex-direction: column; gap: 56px; }
   .err-pol { width: 200px; }
 }
+/* celular: só o recado, sem a polaroid queimada */
+@media (max-width: 700px) {
+  .err-pol-drop { display: none; }
+}
 </style>

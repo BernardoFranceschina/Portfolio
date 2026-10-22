@@ -49,7 +49,7 @@ function suggest() {
       </div>
       <span class="sug-pin" aria-hidden="true" />
     </div>
-    <span class="note-m cad-note">sugestões de pauta são bem-vindas →</span>
+    <span class="note-m cad-note">sugestões de pauta são bem-vindas <span class="seta-lado">→</span><span class="seta-cima">↑</span></span>
   </section>
 </template>
 
@@ -83,9 +83,15 @@ function suggest() {
 .cad .cad-intro, .cad .cad-list p, .cad .cad-meta { color: var(--muted); }
 .cad .cad-list li + li { border-top: 1px solid #e6dfd0; }
 
+.cad .seta-cima { display: none; }
+
 @media (max-width: 700px) {
   .cad { margin-left: 12px; margin-right: 12px; max-width: none; transform: none; }
   .cad .cad-in { padding: 30px 22px; }
   .sug-wrap { position: relative; right: auto; bottom: auto; width: auto; max-width: 340px; margin: -18px 8px 0 auto; }
+  /* aqui o cartão fica em cima do recado, não ao lado */
+  .cad .cad-note { white-space: normal; text-wrap: balance; }
+  .cad .seta-lado { display: none; }
+  .cad .seta-cima { display: inline; }
 }
 </style>

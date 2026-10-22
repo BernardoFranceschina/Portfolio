@@ -8,7 +8,7 @@ hide: false
 photo: '1034'
 ---
 
-Existe um tipo específico de incômodo que aparece quando você abre algo que fez e não se reconhece nele. Foi o que senti com o portfólio antigo. Ele funcionava bem e cumpria o que prometia, mas parecia feito por outra pessoa com outra pressa, a de mostrar serviço.
+Existe um tipo específico de incômodo que aparece quando você abre algo que fez e não se reconhece nele. Foi o que senti com o portfólio antigo. Ele funcionava bem e cumpria o que prometia, mas parecia feito por outra pessoa com outra pressa.
 
 ::nota-margem
 spoiler: refiz este texto algumas vezes também.
@@ -24,7 +24,7 @@ Refazer é deixar o trabalho alcançar quem eu sou agora, poucas coisas dão tan
 
 ## de onde veio a forma
 
-Às vezes a gente aprende a olhar com quem está do lado. Na vida convivo com pessoas que tratam o próprio ofício como arte, e foi com elas que comecei a reparar em como as coisas se apresentam.
+Às vezes a gente aprende a olhar com quem está do lado. Na vida, convivo com pessoas que tratam o próprio ofício como arte, e foi com elas que comecei a reparar em como as coisas se apresentam.
 
 A fotografia me ensinou algo parecido, o enquadramento que escolho diz muito sobre quem está olhando, e acredito que um site funciona do mesmo jeito.
 
@@ -38,7 +38,7 @@ Por isso comecei pelas fotos e deixei que algumas paisagens que tirei dessem o t
 - v2 · esta aqui ✓
 ::
 
-Cada coisa que a gente faz é honesta com o momento em que nasceu, e aquele site nasceu sem espaço para pensar em identidade. Para este eu tirei o tempo.
+Cada coisa que a gente faz é honesta com o momento em que nasceu, e aquele site nasceu sem espaço para pensar em identidade.
 
 ## saber a hora de parar
 

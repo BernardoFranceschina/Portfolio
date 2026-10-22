@@ -122,17 +122,33 @@ onMounted(() => {
     return () => saved.forEach(([a, t]) => { a.style.transform = t })
   }
 
+  /** texto logo depois do fim da frase da marca `m` (antes da marca `next`), já separado ali; null se não houver */
+  function sentenceEnd(m: HTMLElement, next: HTMLElement) {
+    const walk = document.createTreeWalker(m.closest('p') || m.parentElement!, NodeFilter.SHOW_TEXT)
+    walk.currentNode = m
+    for (let n = walk.nextNode() as Text | null; n; n = walk.nextNode() as Text | null) {
+      if (next.compareDocumentPosition(n) & (Node.DOCUMENT_POSITION_FOLLOWING | Node.DOCUMENT_POSITION_CONTAINED_BY)) return null
+      if (n.parentElement?.closest('.an')) continue
+      const k = n.data.search(/[.!?](\s|$)/)
+      if (k >= 0) return n.splitText(k + 1)
+    }
+    return null
+  }
+  const split = new Set<HTMLElement>() // parágrafos com o texto partido por uma nota: juntar de novo antes de medir
+
   function layout() {
     const restore = flatten()
     svg.replaceChildren()
     layer.replaceChildren()
     inline.forEach(n => n.remove())
     inline = []
+    split.forEach(p => p.normalize())
+    split.clear()
     groups.length = 0
-    const box = el.getBoundingClientRect()
-    svg.setAttribute('width', String(box.width))
-    svg.setAttribute('height', String(box.height))
-    const rel = (r: DOMRect) => new DOMRect(r.left - box.left, r.top - box.top, r.width, r.height)
+    let box = el.getBoundingClientRect()
+    // a posição do papel é medida de novo a cada uso: uma nota que entra no texto, com a página rolada (F5 no meio),
+    // faz o navegador compensar a rolagem e o papel inteiro sobe na tela
+    const rel = (r: DOMRect) => { box = el.getBoundingClientRect(); return new DOMRect(r.left - box.left, r.top - box.top, r.width, r.height) }
     const wide = mq.matches && !props.inline
     let floor = -Infinity // notas da margem nunca se sobrepõem
 
@@ -189,9 +205,19 @@ onMounted(() => {
         }
       }
       else {
-        // abaixo do parágrafo, ocupando a linha pautada que sobra entre ele e o próximo
-        let box2 = p.nextElementSibling as HTMLElement | null
-        if (!box2?.classList.contains('an-inline')) {
+        // outra marca no mesmo parágrafo: a nota entra logo depois da frase desta, senão pareceria ser da seguinte
+        const after = marks[i + 1] && p.contains(marks[i + 1]!) ? sentenceEnd(m, marks[i + 1]!) : null
+        // senão, abaixo do parágrafo, ocupando a linha pautada que sobra entre ele e o próximo
+        let box2 = after ? null : p.nextElementSibling as HTMLElement | null
+        if (after) {
+          box2 = document.createElement('span')
+          box2.className = 'an-inline mid'
+          box2.setAttribute('aria-hidden', 'true')
+          after.before(box2)
+          inline.push(box2)
+          split.add(p)
+        }
+        else if (!box2?.classList.contains('an-inline')) {
           box2 = document.createElement('div')
           box2.className = 'an-inline'
           box2.setAttribute('aria-hidden', 'true')
@@ -205,6 +231,8 @@ onMounted(() => {
       groups.push({ g, note })
       if (shown.has(i) || reduce) { g.classList.add('on'); note.classList.add('on') }
     })
+    svg.setAttribute('width', String(el.offsetWidth))
+    svg.setAttribute('height', String(el.offsetHeight))
     restore()
   }
 
@@ -224,17 +252,22 @@ onMounted(() => {
     }
   }, { rootMargin: '0px 0px -15% 0px' })
 
-  layout()
-  document.fonts?.ready.then(layout)
-  let w = el.offsetWidth
-  const ro = new ResizeObserver(() => { if (el.offsetWidth !== w) { w = el.offsetWidth; layout() } })
+  // refaz quando a largura muda e também quando a altura muda: no celular as notas ficam no meio do texto e,
+  // quando a fonte delas chega (depois do primeiro desenho, ainda mais num F5 no meio da página), tudo abaixo desce
+  let w = 0, h = 0
+  const relayout = () => { layout(); w = el.offsetWidth; h = el.offsetHeight }
+  relayout()
+  document.fonts?.ready.then(relayout)
+  document.fonts?.addEventListener('loadingdone', relayout)
+  const ro = new ResizeObserver(() => { if (el.offsetWidth !== w || el.offsetHeight !== h) relayout() })
   ro.observe(el)
   mq.addEventListener('change', layout)
   if (!reduce) marks.forEach(m => io.observe(m))
 
   cleanup = () => {
     io.disconnect(); ro.disconnect(); mq.removeEventListener('change', layout)
-    svg.remove(); layer.remove(); inline.forEach(n => n.remove())
+    document.fonts?.removeEventListener('loadingdone', relayout)
+    svg.remove(); layer.remove(); inline.forEach(n => n.remove()); split.forEach(p => p.normalize())
     el.querySelectorAll('.an .sr-only').forEach(n => n.remove())
   }
 })
@@ -272,10 +305,20 @@ onBeforeUnmount(() => cleanup?.())
 .an-note.on { clip-path: inset(-6px -6px -6px -6px); transition: clip-path .55s .5s cubic-bezier(.4,0,.6,1); }
 
 .an-inline { margin: -32px 0 32px; text-align: right; line-height: 32px; }
+.an-inline.mid { display: block; margin: 0; } /* no meio do parágrafo: a linha pautada logo abaixo da frase */
 .an-note.inline { position: static; display: inline-flex; gap: 4px; align-items: flex-start; margin-left: 18px; text-align: left; transition-delay: .3s; }
 .an-note.inline > span { display: inline; }
 .an-note.inline > span + span::before { content: " · "; }
 .an-up { flex: none; margin-top: 2px; fill: none; stroke: var(--pen); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+/* celular: a nota abaixo do parágrafo quebra como texto corrido (no inline-flex cada item virava uma coluna) */
+@media (max-width: 700px) {
+  /* sublinhado longo inteiro numa linha deixava a linha de cima pela metade; o traço já acompanha cada linha */
+  .anotado .an[data-kind="underline"] { white-space: normal; }
+  /* vertical-align: sem o espaço da linha de base, a nota ocupa uma linha da pauta (32px), não 36 */
+  .an-note.inline { position: relative; display: inline-block; vertical-align: top; max-width: 100%; margin-left: 0; padding-left: 26px; }
+  .an-note.inline .an-up { position: absolute; left: 0; top: 4px; }
+}
 
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 

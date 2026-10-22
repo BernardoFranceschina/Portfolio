@@ -1,5 +1,4 @@
 <script setup lang="ts">
-/** Imagem de compartilhamento: uma foto minha de fundo com um bilhete de papel por cima. */
 const { photo = '0716', title = 'oi, eu sou o Bernardo.' } = defineProps<{
   photo?: string
   title?: string

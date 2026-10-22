@@ -96,6 +96,10 @@ onMounted(() => {
 .info-poke.on path { animation: info-draw .5s calc(.4s + var(--i) * .2s) ease-out forwards; }
 @keyframes info-draw { to { stroke-dashoffset: 0; } }
 @keyframes info-poke { 0%, 60%, 100% { transform: scale(1); } 75% { transform: scale(.86); } }
+/* celular: os (i) ficam colados na borda direita e a flecha da direita sairia da tela */
+@media (max-width: 700px) {
+  .info-poke:not(.cam-poke) path:first-child { display: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   .info-poke g, .info-poke path { animation: none !important; stroke-dashoffset: 0; }
   .info-pop-enter-active, .info-pop-leave-active { transition: opacity .15s; }

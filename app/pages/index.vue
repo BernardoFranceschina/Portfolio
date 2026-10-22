@@ -258,7 +258,10 @@ defineOgImageComponent('Postal', { photo: '0716', title: 'oi, eu sou o Bernardo.
 
 @media (max-width: 700px) {
   .hero-drop { right: 7vw; }
-  .pc-drop { left: 4vw; }
+  .scrap .mono { text-wrap: balance; } /* sem o "Labs" sozinho na linha */
+  /* a pedra cresce com o cartão: ele fica embaixo e o topo dela aparece acima */
+  .rock { height: auto; min-height: 82vh; padding: 32vh 4vw 9vh; contain-intrinsic-size: auto 120vh; }
+  .pc-drop { position: relative; left: auto; bottom: auto; }
   #sobre, #trabalho, #pensamento { margin-left: 12px; margin-right: 12px; max-width: none; transform: none; }
   .rec-wrap { margin: 40px 0 0; transform: none; }
   .extra-wrap { width: auto; max-width: 360px; margin: 40px auto 0; }
@@ -266,6 +269,7 @@ defineOgImageComponent('Postal', { photo: '0716', title: 'oi, eu sou o Bernardo.
   .extra li .pow { position: static; translate: none; margin: -4px 0 -14px 6px; }
   .postcard { grid-template-columns: 1fr; }
   .postcard .sep { display: none; }
-  #pensamento .postit { margin: 0 auto; }
+  .postcard .from .hand { white-space: normal; }
+  #pensamento > .drop { margin: 0 auto; }
 }
 </style>
