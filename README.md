@@ -1,77 +1,71 @@
 <div align="center">
 
-# Portfolio
+# franceschina.dev
 
-**Bernardo Franceschina** · Full Stack Developer
-
-
-[franceschina.dev](https://franceschina.dev)
-
-&nbsp;
-
-![Nuxt](https://img.shields.io/badge/Nuxt_4-00DC82?style=for-the-badge&logo=nuxtdotjs&logoColor=white)
-![Vue](https://img.shields.io/badge/Vue_3-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+**Bernardo Franceschina** · engenheiro de software em Florianópolis
 
 </div>
 
 &nbsp;
 
-Portfólio pessoal com meus estudos de caso, stack técnica e trajetória profissional.
-Suporte completo a **Português** e **Inglês**.
+Site pessoal. Não é um currículo: é um lugar para mostrar como eu penso, o que me interessa e o que eu fotografo.
+
+- **Fotos minhas no fundo**, tiradas com uma Coolpix L810. A troca entre elas é uma íris que abre a partir da câmera de um bonequinho.
+- **O bonequinho** caminha com o scroll, acena quando o cursor chega perto, cochila, lê junto nos textos e tira as fotos. Tem easter eggs (`app/data/bonequinho.ts`).
+- **Cartões de papel**: folha de caderno, ficha pautada, papel quadriculado, post-it, cartão-postal.
+- **Varal de fotos** que dá para arrastar e ampliar. Fotos, ordem e falas em `app/data/varal.ts`.
+- **Caderno**: um blog pequeno em Markdown.
+- O site termina apoiado numa pedra recortada da própria foto.
 
 &nbsp;
 
-## ⚡ Stack
+## Stack
 
 | Camada | Tecnologias |
-|--------|------------|
-| **Core** | Nuxt 4, Vue 3 (Composition API), TypeScript |
-| **Estilo** | Tailwind CSS, Fraunces + Inter via `@nuxt/fonts` |
-| **Conteúdo** | Nuxt Content com schema Zod, Markdown por locale |
-| **SEO** | Nuxt SEO, OG Image dinâmica (Satori), Sitemap, JSON-LD |
-| **i18n** | Nuxt I18n — rotas prefixadas (PT `/` · EN `/en`) |
-| **Imagens** | Nuxt Image — WebP/AVIF, responsive, lazy loading |
-| **Deploy** | Vercel com Analytics e Speed Insights |
+|--------|-------------|
+| **Core** | Nuxt 4, Vue 3, TypeScript, CSS puro |
+| **Conteúdo** | Nuxt Content (coleção `caderno`, Markdown + componentes MDC) |
+| **Fontes** | Newsreader, Caveat e Courier Prime via `@nuxt/fonts` |
+| **SEO** | Nuxt SEO, OG Image (Satori), sitemap, Schema.org |
+| **Deploy** | Vercel, com Analytics e Speed Insights |
 
 &nbsp;
 
-## ✦ Funcionalidades
+## Escrever no caderno
 
-- Modal de projetos com navegação por teclado e zoom de imagens
-- OG Image gerada dinamicamente com template Vue customizado
-- Scroll reveal via IntersectionObserver (`v-reveal` directive)
-- Language switcher com preservação de scroll
-- Copy-to-clipboard do email e download do CV em PDF
-- SEO completo — Open Graph, Twitter Cards, canonical por locale
+Cada texto é um arquivo em `content/caderno/` e ganha página em `/caderno/<arquivo>`. A home mostra os 5 mais recentes. Com `hide: true` ele some da home e a página dá 404.
 
-&nbsp;
+```md
+---
+title: Título do texto
+description: Uma frase sobre ele.
+date: 2026-10-14
+tag: ensaio
+minutes: 6      # opcional
+hide: false     # opcional
+photo: '1034'   # opcional: foto de fundo (public/fotos/<id>.jpg)
+---
 
-## 🚀 Executar localmente
+Texto...
 
-```bash
-git clone https://github.com/bernardofranceschina/portfolio.git
-cd portfolio
-npm install
-npm run dev
+::nota-margem
+anotação à mão na margem
+::
+
+> :marca[frase com marca-texto]
 ```
 
 &nbsp;
 
-## 📬 Contato
+## Fotos
 
-<div align="center">
-
-[![Email](https://img.shields.io/badge/Email-bernardofranceschina@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:bernardofranceschina@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Bernardo_Franceschina-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/bernardo-franceschina/)
-[![GitHub](https://img.shields.io/badge/GitHub-bernardofranceschina-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/bernardofranceschina)
-
-</div>
+As originais ficam em `public/fotos/<id>.jpg`. Depois de adicionar ou trocar uma foto, rode `npm run fotos`: ele gera as versões AVIF (inteira e até 1280px), as miniaturas do varal e a lista de larguras (`app/data/fotos.json`). O site serve AVIF e usa o JPG só como reserva.
 
 &nbsp;
 
-<div align="center">
-<sub>© 2026 Bernardo Franceschina · Feito com Nuxt e Tailwind</sub>
-</div>
+## Rodar localmente
+
+```bash
+npm install
+npm run dev
+```

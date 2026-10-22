@@ -2,34 +2,19 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 export default defineContentConfig({
   collections: {
-    projects: defineCollection({
+    // o "caderno": textos do blog. Criou o .md, o texto aparece; `hide: true` esconde da home e da página.
+    caderno: defineCollection({
       type: 'page',
-      source: 'projects/*.md',
+      source: 'caderno/*.md',
       schema: z.object({
-        order: z.number(),
-        id: z.string(),
         title: z.string(),
         description: z.string(),
-        image: z.string(),
-        second_image: z.string(),
-        architecture_image: z.string(),
-        color: z.string(),
-        tags: z.array(z.string()),
-        year: z.string(),
-        company: z.string(),
-        category: z.string(),
-        role: z.string().default('Full Stack Developer'),
-        live_url: z.string().default(''),
-        work_context: z.enum(['employer', 'client']).default('client'),
-        features: z.array(z.string()).default([]),
-        highlights: z.array(z.string()).default([]),
-        
-        locale: z.string(), 
-        
-        challenge_text: z.string(),
-        development_text: z.string(),
-        result_text: z.string()
-      })
-    })
-  }
+        date: z.string(),
+        tag: z.string(),
+        minutes: z.number().optional(),
+        hide: z.boolean().default(false),
+        photo: z.string().default('1034'),
+      }),
+    }),
+  },
 })
