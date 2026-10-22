@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<{
   besides?: string
   /** desmaiado (página de erro): deitado no chão, olhos em X, sem andar, falar nem reagir */
   fainted?: boolean
-}>(), { endMsg: 'chegamos :)', fainted: false })
+}>(), { endMsg: 'chegamos, valeu pelo passeio!', fainted: false })
 
 const { speech, shooting, flashes, say, flash } = useWalker()
 
@@ -39,13 +39,12 @@ watch(flashes, () => {
   const W = root.value
   if (!W || props.fainted) return
   W.classList.remove('flashing'); void W.offsetWidth; W.classList.add('flashing')
-  say('clique!', 900)
+  say('clique', 900)
 })
 
-const scared = ['ei!', 'opa', 'calma', ':o', 'ai', 'cócegas não']
+const scared = ['ei!', 'opa', 'calma', 'para', 'ai', 'eita']
 let si = 0
 
-/* easter eggs: cliques seguidos (menos de 1,5 s entre um e outro) sorteiam um, primeiro os ainda não vistos */
 type Egg = 'selfie' | 'sueter' | 'cansa'
 const EGGS: Egg[] = SELFIE.foto ? ['selfie', 'sueter', 'cansa'] : ['sueter', 'cansa']
 const seen = new Set<Egg>()
@@ -156,7 +155,7 @@ onMounted(() => {
   function wake() {
     lastInput = Date.now()
     if (!W.classList.contains('sleep')) return false
-    W.classList.remove('sleep'); say('hã? tô acordado', 1400)
+    W.classList.remove('sleep'); say('não to dormindo não..', 1400)
     return true
   }
   wakeUp = wake
@@ -223,7 +222,7 @@ onMounted(() => {
     // leftAt 0: a página abriu numa aba em segundo plano e está aparecendo pela primeira vez (ninguém "voltou")
     if (leftAt && Date.now() - leftAt > 1500) {
       W.classList.remove('sleep')
-      say('voltou!', 1800)
+      say('bem-vind de volta!', 1800)
       wave()
     }
   }

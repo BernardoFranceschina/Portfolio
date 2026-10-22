@@ -76,7 +76,7 @@ useSchemaOrg([
       </div>
     </main>
 
-    <WalkerAvatar end-msg="terminou! valeu por ler :)" besides=".col-wrap" />
+    <WalkerAvatar end-msg="terminou! valeu por ler!" besides=".col-wrap" />
   </div>
 </template>
 

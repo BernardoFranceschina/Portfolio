@@ -1,5 +1,5 @@
 /**
- * Fotos do varal, na ordem em que aparecem (da esquerda para a direita).
+* Fotos do varal, na ordem em que aparecem (da esquerda para a direita).
  *
  * - id: número da foto (o DSCN do arquivo). A original fica em public/fotos/<id>.jpg; a miniatura e as
  *   versões AVIF são geradas com `npm run fotos`.
@@ -9,29 +9,27 @@
 export type FotoVaral = { id: string, legenda: string, fala?: string }
 
 export const FOTOS: FotoVaral[] = [
-  { id: '1027', legenda: 'garça' },
+  { id: '1027', legenda: 'bixo bonito' },
   { id: '0294', legenda: 'pedra equilibrista', fala: 'como ela não cai?' },
-  { id: '1009', legenda: 'barquinhos' },
-  { id: '1045', legenda: 'arco-íris', fala: 'teve arco-íris!' },
-  { id: '0667', legenda: 'praia cheia' },
-  { id: '0870', legenda: 'nuvem carregada', fala: 'vai chover…' },
-  { id: '1048', legenda: 'biguá', fala: 'secando as asas' },
-  { id: '0984', legenda: 'sombra boa' },
-  { id: '0476', legenda: 'fim de tarde' },
   { id: '0736', legenda: 'costão' },
-  { id: '1103', legenda: 'duna' },
-  { id: '0057', legenda: 'prédio vermelho' },
-  { id: '0393', legenda: 'reflexo' },
+  { id: '0667', legenda: 'praia cheia?' },
+  { id: '1009', legenda: 'bora pra costa' },
+  { id: '0870', legenda: 'nuvem carregada', fala: 'vai chover…' },
   { id: '0427', legenda: 'pedras' },
-  { id: '0037', legenda: 'placa-mãe', fala: 'por dentro do notebook' },
+  { id: '1048', legenda: 'secando as asas', fala: 'será que passou protetor solar?' },
+  { id: '0037', legenda: 'placa-mãe', fala: 'por dentro dos chipss' },
+  { id: '0984', legenda: 'sombra boa' },
+  { id: '1103', legenda: 'beco da lua' },
+  { id: '0476', legenda: 'fim de tarde' },
+  { id: '0057', legenda: 'bares noturnos' },
+  { id: '1045', legenda: 'arco-íris' },
+  { id: '0393', legenda: 'natural city life' },
 ]
 
-/** Falas genéricas, em rodízio, para as fotos sem `fala`. */
-export const DICAS = ['clica pra ver grande', 'olha esse azul', 'essa é boa', 'arrasta pro lado']
+export const DICAS = ['clica pra ver grande', 'essa é boa', 'arrasta pro lado', 'eu que tirei essa']
 
-/** Outras falas do bonequinho no varal. */
 export const FALAS = {
-  chegou: 'psiu, olha o varal ↑', // quando o varal aparece na tela pela primeira vez
+  chegou: 'eii, olha o varal ↑', // quando o varal aparece na tela pela primeira vez
   ampliou: 'bonita né?', // na primeira foto ampliada
 }
 

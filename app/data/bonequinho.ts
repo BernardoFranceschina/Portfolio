@@ -28,7 +28,7 @@ export const SUETERES = [
 ]
 
 /** Ele cansa: senta de braços cruzados e só levanta quando a pessoa rola a página. */
-export const CANSOU = { senta: 'cansei.', levanta: 'tá bom, tá bom' }
+export const CANSOU = { senta: 'cansei.', levanta: 'tá bom, bora' }
 
 /** Aviso no penúltimo clique. */
-export const QUASE = 'mais um e eu…'
+export const QUASE = 'cuidado....'
