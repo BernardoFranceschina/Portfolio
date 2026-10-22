@@ -1,0 +1,76 @@
+:root {
+  --paper: #fbf7ee;
+  --ink: #23201b;
+  --muted: #776f62;
+  --pen: #23408e;
+  --pencil: #7d776c;
+  --red: #c4553a;
+  --rule: #b8cbe0;
+  --margin: #e3a2a2;
+  --noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .15  0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #2b3f57; scrollbar-gutter: stable; } /* a página não pula quando o lightbox trava a rolagem */
+body { background: #2b3f57; color: var(--ink); font-family: "Newsreader", Georgia, serif; font-size: 20px; line-height: 1.5; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+::selection { background: #fde66d; color: var(--ink); }
+
+.mono { font-family: "Courier Prime", monospace; font-size: 14px; }
+.hand { font-family: "Caveat", cursive; }
+
+/* clip: o que vaza pelos lados (varal, flechinhas do (i)) não cria rolagem horizontal, nem por script */
+main { position: relative; z-index: 2; overflow-x: clip; }
+
+/* ---------- materiais de papel ---------- */
+.drop { filter: drop-shadow(0 14px 22px rgba(0,0,0,.28)) drop-shadow(0 2px 3px rgba(0,0,0,.15)); }
+
+/* etiqueta (navegação) */
+.label { font-family: "Courier Prime", monospace; font-size: 19px; background: var(--paper); padding: 7px 16px; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,.18); display: inline-block; }
+.label:hover { background: #fff0a8; }
+
+/* folha de caderno pautado, com furos de verdade (dá para ver a foto por eles) */
+.notebook {
+  position: relative; max-width: 660px; padding: 46px 48px 52px 92px;
+  background: var(--noise), linear-gradient(90deg, transparent 70px, var(--margin) 70px 71.5px, transparent 71.5px),
+    repeating-linear-gradient(transparent 0 31px, var(--rule) 31px 32px), var(--paper);
+  background-position: 0 0, 0 0, 0 28px, 0 0; /* pauta logo abaixo da linha de base do texto */
+  -webkit-mask: radial-gradient(circle 8px at 30px 48px, transparent 7.5px, #000 8.5px) 0 0 / 100% 96px repeat-y;
+          mask: radial-gradient(circle 8px at 30px 48px, transparent 7.5px, #000 8.5px) 0 0 / 100% 96px repeat-y;
+  line-height: 32px;
+}
+.notebook h2 { font-family: "Caveat", cursive; font-weight: 600; color: var(--pen); font-size: 46px; line-height: 64px; margin-top: -10px; }
+.notebook p { margin-bottom: 32px; font-size: 20px; }
+.notebook p:last-child { margin-bottom: 0; }
+
+/* ficha pautada */
+.index-card {
+  position: relative; max-width: 600px; padding: 26px 36px 34px;
+  background: var(--noise), linear-gradient(transparent 70px, #d98c8c 70px 72px, transparent 72px),
+    repeating-linear-gradient(transparent 0 31px, #c9d8e8 31px 32px), #fffdf8;
+  background-position: 0 0, 0 0, 0 74px, 0 0;
+  line-height: 32px;
+}
+.index-card h2 { font-family: "Caveat", cursive; font-weight: 600; color: var(--pen); font-size: 44px; line-height: 44px; height: 48px; }
+.index-card p { margin-bottom: 32px; }
+
+/* post-it */
+.postit { position: relative; width: 300px; padding: 30px 26px 34px; background: var(--noise), linear-gradient(170deg, #fff3a3, #fbe57a); font-family: "Caveat", cursive; font-size: 30px; line-height: 1.12; color: #3b3320; transform: rotate(-2.5deg); }
+
+/* fita adesiva */
+.tape { position: absolute; width: 110px; height: 30px; background: rgba(236, 226, 200, .72); box-shadow: 0 1px 2px rgba(0,0,0,.08);
+  clip-path: polygon(2% 0, 98% 4%, 100% 30%, 97% 55%, 100% 80%, 98% 100%, 1% 96%, 3% 70%, 0 45%, 2% 20%); z-index: 3; }
+
+/* anotações humanas */
+.note-m { position: absolute; font-family: "Caveat", cursive; font-size: 27px; line-height: 1.1; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.55), 0 0 12px rgba(0,0,0,.35); max-width: 210px; }
+/* bordas da caneta em px (em % um trecho longo perdia a primeira e a última letra); clone: cada linha ganha as suas */
+mark { background: linear-gradient(100deg, transparent 0 1px, #fde66d 5px calc(100% - 5px), transparent calc(100% - 1px)); background-size: 100% 70%; background-position: 0 75%; background-repeat: no-repeat;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; color: inherit; padding: 0 4px; }
+
+@media (max-width: 700px) {
+  body { font-size: 18px; }
+  .notebook { padding: 34px 20px 40px 54px; background-position: 0 0, -30px 0, 0 14px, 0 0; -webkit-mask-position: -12px 0; mask-position: -12px 0; }
+  .notebook p { font-size: 18px; }
+  .index-card { padding-left: 22px; padding-right: 22px; }
+  .note-m { position: static; display: block; margin: 10px 4px 20px; max-width: none; }
+}
