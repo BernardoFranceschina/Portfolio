@@ -110,10 +110,10 @@ onMounted(() => {
   <figure ref="box" class="recorder">
     <span class="rec-paper" aria-hidden="true" />
     <figcaption class="rec-top mono">
-      <span>telemetria · <b>LISHA/UFSC</b></span>
+      <span>telemetria - <b>LISHA/UFSC</b></span>
       <InfoNota side="right" arrows>
-        <p>No <b>LISHA</b>, laboratório da UFSC onde faço meu TCC, ajudo a construir a telemetria de carros de teste: os dados saem do carro em movimento e chegam a tempo de um engenheiro ler.</p>
-        <p>Este papel faz o mesmo com você. Desde que a página abriu, a pena registra a velocidade com que você rola: cada morro é um trecho que você passou rápido, e a linha reta no meio são as pausas para ler.</p>
+        <p>No <b>LISHA</b>, laboratório da UFSC onde faço meu TCC, ajudo a construir a telemetria de carros da <b>Renault/Horse</b>: os dados saem do carro em movimento e chegam instantaneamente ao engenheiro.</p>
+        <p>Este papel faz o mesmo com você. Desde que a página abriu, é registrado a velocidade com que você rola a página: cada morro é um trecho que você passou rápido, e a linha reta no meio são as pausas para ler.</p>
       </InfoNota>
     </figcaption>
 

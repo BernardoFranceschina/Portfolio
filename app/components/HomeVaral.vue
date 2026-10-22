@@ -130,7 +130,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <span class="tip">← arrasta o varal · clica numa foto</span>
+    <span class="tip">← arrasta o varal - clica em uma foto</span>
 
     <!-- etiqueta: de quem são as fotos, e a câmera no (i) -->
     <div class="varal-tag">
@@ -139,8 +139,16 @@ onMounted(() => {
         <!-- easter egg: clicar na câmera faz o bonequinho tirar a foto secreta (FOTO_SECRETA em app/data/varal.ts) -->
         <button type="button" class="cam" aria-label="câmera Nikon Coolpix L810, vermelha (clica nela)" @click="secret()">
           <Foto id="camera" sizes="190px" alt="" width="225" height="225" />
+          <!-- as mesmas flechinhas do (i), apontando para a câmera -->
+          <svg class="info-poke on cam-poke" viewBox="-150 -110 300 220" aria-hidden="true">
+            <g>
+              <path d="M-140 -60Q-128 -30 -108 -18M-101.5 -21L-96 -10.8L-107.7 -11" style="--i: 0" />
+              <path d="M140 -60Q128 -30 108 -18M101.5 -21L96 -10.8L107.7 -11" style="--i: 1" />
+              <path d="M138 50Q126 30 106 26M103.3 19.3L92.3 23.3L100.9 31.1" style="--i: 2" />
+            </g>
+          </svg>
         </button>
-        <p>Uma <b>Nikon Coolpix L810</b>, compacta, com zoom de 26x. Todas as fotos deste varal saíram dela.</p>
+        <p><b>Nikon Coolpix L810</b>. <br>Todas as fotos deste varal saíram dela.</p>
       </InfoNota>
     </div>
   </section>
@@ -178,8 +186,9 @@ onMounted(() => {
 .varal-tag { position: absolute; left: 7vw; top: -96px; z-index: 5; display: flex; align-items: center; gap: 12px; padding: 8px 14px 8px 18px;
   background: var(--noise), var(--paper); box-shadow: 0 6px 14px -6px rgba(0,0,0,.45); transform: rotate(-2deg); }
 .varal-tag .hand { font-size: 27px; line-height: 1; color: var(--pen); white-space: nowrap; }
-.varal-tag .cam { display: block; width: 190px; margin: 0 auto 6px; padding: 0; border: 0; background: none; cursor: pointer; }
+.varal-tag .cam { position: relative; display: block; width: 190px; margin: 0 auto 6px; padding: 0; border: 0; background: none; cursor: pointer; }
 .varal-tag .cam img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+.varal-tag .cam-poke { width: 300px; height: 220px; margin: -110px 0 0 -150px; }
 .varal-tag .cam:focus-visible { outline: 2px dashed var(--pen); outline-offset: 2px; }
 .varal .tip { position: absolute; left: 6vw; top: 300px; font-family: "Caveat", cursive; font-size: 26px; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.6); transform: rotate(2.2deg); pointer-events: none; }
 

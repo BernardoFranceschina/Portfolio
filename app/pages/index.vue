@@ -10,7 +10,6 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 defineOgImageComponent('Postal', { photo: '0716', title: 'oi, eu sou o Bernardo.' })
-// a pessoa (Person) do Schema.org fica em nuxt.config.ts (schemaOrg.identity), para valer em todas as páginas
 </script>
 
 <template>
@@ -34,8 +33,8 @@ defineOgImageComponent('Postal', { photo: '0716', title: 'oi, eu sou o Bernardo.
         <div class="drop hero-drop">
           <div class="scrap">
             <h1>oi, eu sou o Bernardo.</h1>
-            <span class="mono">engenheiro de software na Wiidoo Labs<br>Florianópolis, SC</span>
-            <span class="hand">↓ role devagar, ele vai junto</span>
+            <span class="mono">Engenheiro de software na Wiidoo Labs<br>Florianópolis, SC</span>
+            <span class="hand">↓ role devagar, eu vai junto</span>
           </div>
           <span class="tape" />
         </div>
@@ -46,8 +45,8 @@ defineOgImageComponent('Postal', { photo: '0716', title: 'oi, eu sou o Bernardo.
           <Anotado tag="article" class="notebook">
             <h2>de onde eu venho</h2>
             <p>Comecei a programar profissionalmente em uma pequena empresa de <span class="an" data-kind="circle" data-note="desde 2020">Concórdia</span>, no oeste de Santa Catarina. Foi lá que aprendi que software bom é o que alguém usa de verdade.</p>
-            <p><span class="an" data-kind="bracket" data-note="freelance · 2022–2026">Depois vieram alguns anos como freelancer, fazendo produtos completos: do banco de dados à tela, do primeiro rascunho ao deploy, para clientes que precisavam que aquilo funcionasse na segunda-feira.</span></p>
-            <p>Hoje sou engenheiro full stack na <span class="an" data-kind="circle" data-note="tempo integral | desde 2026">Wiidoo Labs</span>, fazendo software de impacto social e projetos com IA. Em paralelo, termino <span class="an" data-kind="underline" data-note="UFSC, até 2027">Ciência da Computação</span> na UFSC.</p>
+            <p><span class="an" data-kind="bracket" data-note="freelance de 2022–2026">Depois vieram alguns anos como freelancer, fazendo o ciclo completo dos produtos, para clientes que precisavam que aquilo funcionasse na segunda-feira.</span></p>
+            <p>Hoje sou engenheiro full stack na <span class="an" data-kind="circle" data-note="tempo integral desde 2026">Wiidoo Labs</span>, fazendo software com impacto social e projetos com IA. Em paralelo, termino minha graduação em <span class="an" data-kind="underline" data-note="UFSC Florianópolis">Ciências da Computação</span> na UFSC.</p>
           </Anotado>
         </div>
       </section>
@@ -60,12 +59,11 @@ defineOgImageComponent('Postal', { photo: '0716', title: 'oi, eu sou o Bernardo.
             <h2>o que eu faço hoje</h2>
             <span class="card-info">
               <InfoNota title="curiosidade">
-                <p>O assistente de IA que construí não confia nem nele mesmo: depois que o modelo responde, um código confere se cada citação existe e se o trecho citado está mesmo na regra.</p>
-                <p>Se não estiver, a resposta não sai. Ele prefere dizer “não sei” a inventar.</p>
+                <p>O projeto de IA foi um desafio proposto pelo CEO para melhorar os processos da empresa, a ideia em grupo agregou muito valor a empresa, reduzindo <b>drasticamente</b> o tempo de resposta entre setores.</p>
               </InfoNota>
             </span>
-            <p><span class="an" data-kind="bracket" data-note="Laravel · Vue 3 · TypeScript | Postgres · Docker">Trabalho na Wiidoo Labs, o laboratório de software da Bússola Social. Minha atuação principal é no software de gestão de impacto social, onde organizações planejam, acompanham e mostram o impacto do que fazem.</span></p>
-            <p>Também desenvolvo os projetos de <span class="an" data-kind="cloud" data-note="RAG · BM25 | embeddings | avaliação de LLM">IA</span> da casa. O que mais me interessa ali é fazer o modelo <span class="an" data-kind="underline" data-note="citação validada em código">responder com fonte</span>: achar o trecho certo, citar de onde veio e recusar quando não sabe.</p>
+            <p><span class="an" data-kind="bracket" data-note="Laravel · Vue 3 · TypeScript | Postgres · Docker + + + +...">Trabalho na Wiidoo Labs, o laboratório de software da Bússola Social. Minha atuação principal é no software de gestão de impacto social, onde organizações planejam, acompanham e mostram o impacto do que fazem.</span></p>
+            <p>Também desenvolvo alguns projetos de <span class="an" data-kind="cloud" data-note="RAG | BM25 + embeddings | avaliação de LLM | e muito mais coisas.">IA</span> da casa. O projeto mais ambicioso é um assistente de IA para consultar o conhecimento dos produtos da casa. Ele foi feito para ajudar o QA, suporte, produto e os devs a <span class="an" data-kind="underline" data-note="modelos não alucinam">encontrar as respostas corretas</span>, sem depender de outras fontes.</p>
           </Anotado>
         </div>
         <span class="tape t1" />
@@ -101,7 +99,10 @@ defineOgImageComponent('Postal', { photo: '0716', title: 'oi, eu sou o Bernardo.
 
       <section id="pensamento" class="wrap" data-shot="4">
         <div class="drop" style="width: max-content">
-          <p class="postit">Lembrete:<br>ir sempre à praia ouvir as ondas do mar</p>
+          <p class="postit">
+            <span class="verso">isso de querer ser<br>exatamente aquilo<br>que a gente é<br>ainda vai<br>nos levar além</span>
+            <span class="mono autor">— Paulo Leminski</span>
+          </p>
         </div>
       </section>
 
@@ -112,8 +113,8 @@ defineOgImageComponent('Postal', { photo: '0716', title: 'oi, eu sou o Bernardo.
           <div class="postcard">
             <span class="pc-head mono" aria-hidden="true">cartão-postal - post card</span>
             <div class="msg">
-              <p class="hand">a vista daqui de cima é bonita.</p>
-              <p class="hand small">frase bonita pra deixar aqui</p>
+              <p class="hand">funciona na minha máquina, e nesta pedra também.</p>
+              <p class="hand small">nenhum bug à vista</p>
             </div>
             <div class="sep"><span class="mono" aria-hidden="true">na frente: a pedra lá de baixo - DSCN0281</span></div>
             <div class="addr">
@@ -184,12 +185,14 @@ defineOgImageComponent('Postal', { photo: '0716', title: 'oi, eu sou o Bernardo.
 
 #trabalho { margin-left: auto; margin-right: 12vw; max-width: 600px; transform: rotate(-.8deg); }
 #trabalho .tape.t1 { left: 40%; top: -14px; transform: rotate(3deg); }
-.card-wrap { position: relative; z-index: 2; }
-.card-info { position: absolute; right: 22px; top: 26px; z-index: 4; }
-.rec-wrap { position: relative; z-index: 3; width: min(640px, 100%); margin: 56px 0 0 4%; transform: rotate(1.4deg); }
+.card-wrap { position: relative; z-index: 10; }
+.card-info { position: absolute; right: 22px; top: 26px; z-index: 20; }
+.card-info .info { z-index: 100; }
+.card-info .info-note { z-index: 100; }
+.rec-wrap { position: relative; z-index: 30; width: min(640px, 100%); margin: 56px 0 0 4%; transform: rotate(1.4deg); }
 .rec-wrap .tape { left: 44%; top: -13px; transform: rotate(-3deg); }
 /* quadradinho de papel quadriculado com os projetos extras */
-.extra-wrap { position: relative; z-index: 3; width: 320px; margin: 48px 6% 0 auto; transform: rotate(-2.2deg); }
+.extra-wrap { position: relative; z-index: 1; width: 320px; margin: 48px 6% 0 auto; transform: rotate(-2.2deg); }
 .extra { aspect-ratio: 1; padding: 26px 26px 22px; display: flex; flex-direction: column; color: var(--ink);
   background: var(--noise), linear-gradient(#dfe7ef 1px, transparent 1px) 0 0 / 16px 16px, linear-gradient(90deg, #dfe7ef 1px, transparent 1px) 0 0 / 16px 16px, #fbfcfd; }
 .extra h2 { font-size: 32px; line-height: 1; font-weight: 600; color: var(--pen); margin-bottom: 14px; }
@@ -216,6 +219,8 @@ defineOgImageComponent('Postal', { photo: '0716', title: 'oi, eu sou o Bernardo.
 
 
 #pensamento { margin-left: 58vw; }
+#pensamento .verso { display: block; }
+#pensamento .autor { display: block; margin-top: 16px; text-align: right; font-size: 12px; letter-spacing: .08em; color: #8a7a4a; }
 
 /* rodapé: pedra recortada + cartão-postal */
 /* content-visibility: a pedra (400 KB) só baixa quando o rodapé chega perto, sem disputar com a primeira foto */

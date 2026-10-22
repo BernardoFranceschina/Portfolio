@@ -1,50 +1,53 @@
 ---
 title: Refiz este site de novo
-description: Sobre ser crítico com o próprio trabalho, refazer até gostar, e o dia em que você precisa parar e publicar.
-date: 2026-10-14
+description: Sobre ser crítico com o próprio trabalho, refazer até gostar e refazer de novo quando necessário.
+date: 2026-10-22
 tag: ensaio
-minutes: 6
+minutes: 4
 hide: false
 photo: '1034'
 ---
 
-Este é o portfólio que eu fiz depois de olhar para o anterior e achar ele velho. Não quebrado, não errado. Só velho. Funcionava, tinha SEO, tinha i18n, tinha tudo que um portfólio “deveria” ter. E mesmo assim, toda vez que eu abria, alguma coisa me incomodava.
-
-Eu sou assim com quase tudo que faço. Quando tenho liberdade de mudar, eu mudo. Às vezes três, quatro vezes. Não é perfeccionismo no sentido bonito da palavra; é mais uma coceira. A coisa funciona, mas não parece minha ainda.
+Existe um tipo específico de incômodo que aparece quando você abre algo que fez e não se reconhece nele. Foi o que senti com o portfólio antigo. Ele funcionava bem e cumpria o que prometia, mas parecia feito por outra pessoa com outra pressa, a de mostrar serviço.
 
 ::nota-margem
-spoiler: este texto também foi reescrito umas vezes.
+spoiler: refiz este texto algumas vezes também.
 ::
 
-## refazer não é recomeçar
+## mudar faz parte
 
-Durante muito tempo eu achei que refazer era sinal de que eu tinha errado na primeira vez. Hoje acho o contrário. A primeira versão é a que te mostra o que você realmente queria. Ninguém sabe isso antes de ver a coisa de pé.
+Tudo o que a gente faz carrega quem a gente era quando fez, por isso o trabalho envelhece mesmo quando o código continua de pé. A versão antiga continua tendo valor porque marca de onde eu saí.
 
-No trabalho isso aparece o tempo todo. A primeira versão de uma feature resolve o problema que alguém descreveu. A segunda resolve o problema que a pessoa realmente tinha. A terceira, se você tiver sorte, resolve sem ninguém perceber que existia um problema.
+Refazer é deixar o trabalho alcançar quem eu sou agora, poucas coisas dão tanta satisfação quanto abrir algo que construí e me reconhecer nele, e isso quase nunca acontece de primeira. Antes é preciso fazer e olhar o resultado com calma.
 
-> :marca[A primeira versão é a que te mostra o que você realmente queria.]
+> :marca[A primeira versão aponta o caminho.]
+
+## de onde veio a forma
+
+Às vezes a gente aprende a olhar com quem está do lado. Na vida convivo com pessoas que tratam o próprio ofício como arte, e foi com elas que comecei a reparar em como as coisas se apresentam.
+
+A fotografia me ensinou algo parecido, o enquadramento que escolho diz muito sobre quem está olhando, e acredito que um site funciona do mesmo jeito.
+
+Por isso comecei pelas fotos e deixei que algumas paisagens que tirei dessem o tom. O varal nasceu da vontade de pendurá-las como fotos reveladas. O mar e a pedra vieram dos lugares onde eu gosto de estar e o bonequinho chegou para acompanhar quem está do outro lado.
 
 ## as versões que ficaram pelo caminho
 
-Para este site, antes de chegar aqui, eu passei por algumas ideias que pareciam boas no papel:
-
 ::versoes
-- ~~v1 · o portfólio antigo~~
-- ~~v2 · quatro mockups bonitinhos~~
-- ~~v3 · preto e branco, sério demais~~
-- v4 · esta aqui ✓
+- ~~v0 · curriculo impresso?~~
+- ~~v1 · tudo no lugar, nada de mim~~
+- v2 · esta aqui ✓
 ::
 
-Nenhuma delas estava errada. Só não eram eu. Uma era séria demais. Outra falava muito sobre mim, quando o que eu gosto é falar sobre o que está em volta. Foi jogando fora que eu entendi o que queria manter: as fotos, um bonequinho tímido e um espaço para escrever com calma.
-
-::nota-margem
-o bonequinho aí embaixo está lendo junto. ou fingindo.
-::
+Cada coisa que a gente faz é honesta com o momento em que nasceu, e aquele site nasceu sem espaço para pensar em identidade. Para este eu tirei o tempo.
 
 ## saber a hora de parar
 
-O lado ruim de ser crítico é que dá para refazer para sempre. Sempre vai ter uma fonte melhor, um espaçamento mais certo, uma animação mais suave. Em algum momento a pergunta muda de "está bom?" para "está bom o suficiente para alguém usar?".
+Quem olha o próprio trabalho com cuidado corre o risco de nunca terminar. Sempre dá para trocar uma fonte ou ajustar um detalhe que só eu vou notar. Em algum momento parei de perguntar se estava perfeito e passei a perguntar se alguém já conseguia ler.
 
-E aí entra a outra parte de mim, a que gosta de ver as coisas funcionando. Um site perfeito no meu computador não serve para nada. Um site bom o suficiente, no ar, com alguém lendo este parágrafo agora, serve.
+Uma coisa só fica pronta quando chega em alguém. No meu computador o site não servia para ninguém, e agora ele serve para você que está lendo.
 
-Então publiquei. Provavelmente vou refazer de novo. Mas agora pelo menos tem alguém do outro lado.
+Então publiquei. Talvez eu refaça tudo de novo um dia, mas por enquanto ele chegou a você.
+
+::nota-margem
+oiii visitante!!
+::

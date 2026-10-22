@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://franceschina.dev',
     name: 'Bernardo Franceschina',
-    description: 'Engenheiro de software em Florianópolis. Full stack na Wiidoo Labs, IA que responde com fonte, telemetria no LISHA/UFSC e um varal de fotos.',
+    description: 'Engenheiro de software',
     defaultLocale: 'pt-BR',
     separator: '·',
     indexable: true,
@@ -41,7 +41,7 @@ export default defineNuxtConfig({
       worksFor: { '@type': 'Organization', name: 'Wiidoo Labs' },
       alumniOf: { '@type': 'CollegeOrUniversity', name: 'Universidade Federal de Santa Catarina', alternateName: 'UFSC' },
       address: { '@type': 'PostalAddress', addressLocality: 'Florianópolis', addressRegion: 'SC', addressCountry: 'BR' },
-      knowsAbout: ['Engenharia de software', 'Desenvolvimento full stack', 'RAG', 'Avaliação de LLM', 'Telemetria', 'Laravel', 'Vue', 'TypeScript', 'Python'],
+      knowsAbout: ['Engenharia de software', 'Desenvolvimento full stack', 'LLM', 'Avaliação de LLM', 'Telemetria', 'Laravel', 'Vue', 'TypeScript', 'Python'],
       sameAs: ['https://github.com/bernardofranceschina', 'https://www.linkedin.com/in/bernardo-franceschina'],
     },
   },

@@ -23,7 +23,7 @@ function suggest() {
     <div class="drop">
       <div class="cad-in">
         <h2 class="hand">caderno</h2>
-        <p class="cad-intro">Textos sobre o que eu estudo e construo. Às vezes, sobre fotos.</p>
+        <p class="cad-intro">Textos sobre o que eu estudo e construo. Às vezes, sobre outras coisas.</p>
 
         <ol v-if="posts.length" class="cad-list">
           <li v-for="p in posts" :key="p.path">
