@@ -34,7 +34,7 @@ defineOgImageComponent('Postal', { photo: '0716', title: 'oi, eu sou o Bernardo.
           <div class="scrap">
             <h1>oi, eu sou o Bernardo.</h1>
             <span class="mono">Engenheiro de software na Wiidoo Labs<br>Florianópolis, SC</span>
-            <span class="hand">↓ role devagar, eu vai junto</span>
+            <span class="hand">↓ role devagar, eu vou junto</span>
           </div>
           <span class="tape" />
         </div>
@@ -45,7 +45,7 @@ defineOgImageComponent('Postal', { photo: '0716', title: 'oi, eu sou o Bernardo.
           <Anotado tag="article" class="notebook">
             <h2>de onde eu venho</h2>
             <p>Comecei a programar profissionalmente em uma pequena empresa de <span class="an" data-kind="circle" data-note="desde 2020">Concórdia</span>, no oeste de Santa Catarina. Foi lá que aprendi que software bom é o que alguém usa de verdade.</p>
-            <p><span class="an" data-kind="bracket" data-note="freelance de 2022–2026">Depois vieram alguns anos como freelancer, fazendo o ciclo completo dos produtos, para clientes que precisavam que aquilo funcionasse na segunda-feira.</span></p>
+            <p><span class="an" data-kind="bracket" data-note="de 2022 até 2026">Depois vieram alguns anos como freelancer, fazendo o ciclo completo dos produtos, para clientes que precisavam que aquilo funcionasse na segunda-feira.</span></p>
             <p>Hoje sou engenheiro full stack na <span class="an" data-kind="circle" data-note="tempo integral desde 2026">Wiidoo Labs</span>, fazendo software com impacto social e projetos com IA. Em paralelo, termino minha graduação em <span class="an" data-kind="underline" data-note="UFSC Florianópolis">Ciências da Computação</span> na UFSC.</p>
           </Anotado>
         </div>
@@ -62,7 +62,7 @@ defineOgImageComponent('Postal', { photo: '0716', title: 'oi, eu sou o Bernardo.
                 <p>O projeto de IA foi um desafio proposto pelo CEO para melhorar os processos da empresa, a ideia em grupo agregou muito valor a empresa, reduzindo <b>drasticamente</b> o tempo de resposta entre setores.</p>
               </InfoNota>
             </span>
-            <p><span class="an" data-kind="bracket" data-note="Laravel · Vue 3 · TypeScript | Postgres · Docker + + + +...">Trabalho na Wiidoo Labs, o laboratório de software da Bússola Social. Minha atuação principal é no software de gestão de impacto social, onde organizações planejam, acompanham e mostram o impacto do que fazem.</span></p>
+            <p><span class="an" data-kind="bracket" data-note="Laravel · vue · TypeScript | Postgres · Docker + + + +...">Trabalho na Wiidoo Labs, o laboratório de software da Bússola Social. Minha atuação principal é no software de gestão de impacto social, onde organizações planejam, acompanham e mostram o impacto do que fazem.</span></p>
             <p>Também desenvolvo alguns projetos de <span class="an" data-kind="cloud" data-note="RAG | BM25 + embeddings | avaliação de LLM | e muito mais coisas.">IA</span> da casa. O projeto mais ambicioso é um assistente de IA para consultar o conhecimento dos produtos da casa. Ele foi feito para ajudar o QA, suporte, produto e os devs a <span class="an" data-kind="underline" data-note="modelos não alucinam">encontrar as respostas corretas</span>, sem depender de outras fontes.</p>
           </Anotado>
         </div>
